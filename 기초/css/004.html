@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lnag="en">
+    <head>
+        <meta charset = "utf-8">
+        <title>Document</title>
+        <style>
+            .one {font-size: 32px;}
+            /* 2em == 32px */
+            /* em은 부모 픽셀의 배수 */
+            /* rem은 바디 픽셀의 배수 */
+            .two {font-size: 2em;}
+            .three {font-weight: normal;}
+            div{font-size:8px;}
+            .box-one{
+                /* %는 페이지 크기에 따라 달라짐 */
+                width: 50%;
+                /* 높이는 % 사용 불가능 -> vh 사용해야함*/
+                height: 100px;
+                background-color: green;
+            }
+            .box-two{
+                width: 200px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="one">hello world</p>
+        <div>
+            <p class="two">hello world</p>
+        </div>
+        <h1 class="three">hello world</h1>
+        <div class="box-one"></div>
+        <div class="box-two"></div>
+    </body>
+</html>
