@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lnag="en">
+    <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            var i = 10;
+            let k = 10000; // let과 const은 블럭 scope
+            if (i > 5){
+                let j = 100;
+            }
+            else{
+                var j = 1000;
+            }
+            function f(){
+                var fvar = 10000; // 얘는 함수 벗어나면 실행 X
+                i += 20;
+            }
+            f()
+            document.write(j);
+            document.write(i);
+        </script>
+    </body>
+</html>
