@@ -1,36 +1,258 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <title>NAVER</title>
     <style>
-        #header{
-            background-color: green;
-            height: 200px;
+        /* #wrapper{
+            margin: 0 100px 0 100px;
+        } */
+        a:link,
+        a:visited,
+        a:hover {
+            color: #a09f9f;
+            text-decoration: none;
         }
-        #footer{
-            background-color: gray;
-            height: 50px;
+
+        #shortcut {
+            text-align: right;
+        }
+
+        #search-area {
+            margin: 0 0 50px 50px;
+        }
+
+        #logo {
+            float: left;
+            margin-right: 20px;
+        }
+
+        #naver-logo {
+            width: 200px;
+        }
+
+        #search-bar {
+            width: 400px;
+            height: 45px;
+            border: 2px solid #2DB400;
+            margin-top: 10px;
+        }
+
+        #search-btn {
+            width: 50px;
+            height: 45px;
+            background-image: url("img/search.png");
+            background-position: center;
+            background-size: cover;
+            border: 0;
+            outline: 0;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        #menu-bar {
+            margin: -20px 0 -20px 0;
+        }
+
+        #footer {
+            background-color: #fafbfc;
+            padding-bottom: 100px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            color: #a09f9f;
+        }
+
+        #service {
+            float: right;
+        }
+
+        #announce-page {
+            float: left;
+        }
+
+        #announce-policy {
+            text-align: center;
         }
     </style>
 </head>
+
 <body>
-    <div id="main">
+    <div id="wrapper">
+        <!-- header -->
         <div id="header">
-            <div id="shortcut"></div>
-            <div id="search-bar"></div>
-            <div id="menu-bar"></div>
+            <div id="shortcut">
+                <a href="https://help.naver.com/support/contents/contents.help?serviceNo=1074&categoryNo=16719"><span>네이버를
+                        시작페이지로</span></a>
+                <a href="https://jr.naver.com/"><span class="move">쥬니어네이버</span></a>
+                <a href="https://happybean.naver.com/"><span class="move">해피빈</span></a>
+            </div>
+            <div id="search-area">
+                <div id="logo">
+                    <a href="https://www.naver.com"><img src="img/naver_logo.png" id="naver-logo"></a>
+                </div>
+                <div id="search">
+                    <input type="text" id="search-bar">
+                    <button class="btn btn-light" id="search-btn"></button>
+                </div>
+            </div>
+
+
+            <hr>
+            <div id="menu-bar">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">메일</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">카페</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">블로그</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">지식iN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">쇼핑</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pay</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">TV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">사전</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">뉴스</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">증권</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">부동산</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">지도</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">영화</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">VIBE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">책</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">웹툰</a>
+                            </li>
+                            <!-- 드롭다운 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    더보기
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">날씨</a>
+                                    <a class="dropdown-item" href="#">네이버 MY CAR</a>
+                                    <a class="dropdown-item" href="#">네이버 게임</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <hr>
+
         </div>
+
+
+        <!-- 메인 -->
+        <div id="main">
+
+        </div>
+
+
+
+
+        <!-- footer -->
         <div id="footer">
+            <!-- 카드 섹션 -->
             <div id="ad"></div>
             <hr>
             <div id="announce-menu"></div>
+            <a href="https://www.naver.com/NOTICE">
+                <div id="announce-page"><span>공지사항</span></div>
+            </a>
+            <a href="https://www.naver.com/more.html">
+                <div id="service"><span>서비스 전체보기</span></div>
+            </a>
             <hr>
-            <div id="announce-with"></div>
+            <div id="announce-with">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Creators</th>
+                            <td>크리에이터</td>
+                            <td>스몰비지니스</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Partners</th>
+                            <td>비즈니스광고</td>
+                            <td>스토어 개설</td>
+                            <td>지역업체 등록</td>
+                            <td>엑스퍼트 등록</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Developers</th>
+                            <td>네이버 개발자 센터</td>
+                            <td>오픈 API</td>
+                            <td>오픈소스</td>
+                            <td>네이버 D2</td>
+                            <td>네이버 D2SF</td>
+                            <td>네이버 랩스</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <hr>
-            <div id="announce-policy"></div>
+            <div id="announce-policy">
+                <a href="https://www.navercorp.com/"><span>회사소개</span></a>
+                <a href="https://recruit.navercorp.com/naver/recruitMain"><span>인재채용</span></a>
+                <a href="https://www.navercorp.com/naver/proposalGuide"><span>제휴제안</span></a>
+                <a href="https://policy.naver.com/policy/service.html"><span>이용약관</span></a>
+                <a href="https://policy.naver.com/policy/privacy.html"><span>개인정보처리방침</span></a>
+                <a href="https://policy.naver.com/policy/youthpolicy.html"><span>청소년보호정책</span></a>
+                <a href="https://policy.naver.com/policy/spamcheck.html"><span>네이버 정책</span></a>
+                <a href="https://help.naver.com/"><span>고객센터</span></a>
+                <a href="https://www.navercorp.com/" target="_sub"><span>© Naver Corp.</span></a>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
