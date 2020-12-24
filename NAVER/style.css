@@ -61,6 +61,38 @@ input:focus {
 
 #menu-bar {
     margin: -20px 0 -20px 0;
+    float: left;
+}
+
+#rank {
+    border: 2px solid #2DB400;
+}
+
+.rank-list {
+    overflow: hidden;
+    /* width: 160px; */
+    height: 20px;
+}
+
+.rank-list dt {
+    display: none;
+}
+
+.rank-list dd {
+    position: relative;
+    margin: 0;
+}
+
+.rank-list ol {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.rank-list li {
+    height: 20px;
 }
 
 #footer {
@@ -107,29 +139,33 @@ input:focus {
 
 #left-info{
     float: left;
-    width: 800px;
-    /* background-color: darkgray; */
+    width: 750px;
 }
 
-/* .carousel-inner{
+#main-left-ad{
     width: 700px;
-} */
-
-#main-ad{
-    width: 750px;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
-#main-ad-img{
-    width: 750px;
-    height: 200px;
+#main-left-ad-img{
+    width: 700px;
+    height: 120px;
     margin: auto;
+}
+
+#news{
+    border: 2px solid #2DB400;
+    width: 700px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 #carouselExampleControls{
     width: 750px;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 #left-info table td{
@@ -147,7 +183,7 @@ input:focus {
 
 #right-info{
     position: absolute;
-    right: 20px;
+    right: 90px;
 }
 
 #login-btn{
@@ -161,13 +197,31 @@ input:focus {
 #login-form{
     width: 350px;
     height: 120px;
+    margin-bottom: 30px;
 }
 
 #login-form > p{
     margin-left: 15px;
+    color: #a09f9f;
+    font-size: 12px;
 }
 
 #sign-up{
     float: right;
     margin-left: -20px;
+}
+
+#weather{
+    border: 2px solid #2DB400;
+    width: 350px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: black;
+}
+
+#main-right-ad-img{
+    width: 350px;
+    height: 70px;
+    margin-bottom: 30px;
 }
