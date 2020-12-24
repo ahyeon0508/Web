@@ -15,85 +15,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            var count = $('#rank-list li').length;
+            var height = $('#rank-list li').height();
+
+            function step(index) {
+                $('#rank-list ul').delay(2000).animate({
+                    top: -height * index,
+                }, 500, function () {
+                    step((index + 1) % count);
+                });
+            }
+
+            step(1);
+        });
+    </script>
     <title>NAVER</title>
-    <style>
-        /* #wrapper{
-            margin: 0 100px 0 100px;
-        } */
-        a:link,
-        a:visited,
-        a:hover {
-            color: #a09f9f;
-            text-decoration: none;
-        }
-
-        #shortcut {
-            text-align: right;
-        }
-
-        #search-area {
-            margin: 0 0 50px 50px;
-        }
-
-        #logo {
-            float: left;
-            margin-right: 20px;
-        }
-
-        #naver-logo {
-            width: 200px;
-        }
-
-        #search-bar {
-            width: 400px;
-            height: 45px;
-            border: 2px solid #2DB400;
-            margin-top: 10px;
-        }
-
-        #search-btn {
-            width: 50px;
-            height: 45px;
-            background-image: url("img/search.png");
-            background-position: center;
-            background-size: cover;
-            border: 0;
-            outline: 0;
-        }
-
-        input:focus {
-            outline: none;
-        }
-
-        #menu-bar {
-            margin: -20px 0 -20px 0;
-        }
-
-        #footer {
-            background-color: #fafbfc;
-            padding-bottom: 100px;
-        }
-
-        table {
-            border-collapse: collapse;
-        }
-
-        td {
-            color: #a09f9f;
-        }
-
-        #service {
-            float: right;
-        }
-
-        #announce-page {
-            float: left;
-        }
-
-        #announce-policy {
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
@@ -115,8 +55,6 @@
                     <button class="btn btn-light" id="search-btn"></button>
                 </div>
             </div>
-
-
             <hr>
             <div id="menu-bar">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -177,14 +115,65 @@
                                     더보기
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">날씨</a>
-                                    <a class="dropdown-item" href="#">네이버 MY CAR</a>
-                                    <a class="dropdown-item" href="#">네이버 게임</a>
+                                    <table id="plus">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">ㄱ-ㅁ</th>
+                                                <th scope="col">ㅂ-ㅅ</th>
+                                                <th scope="col">ㅇ</th>
+                                                <th scope="col">ㅈ-ㅊ</th>
+                                                <th scope="col">ㅋ-ㅎ</th>
+                                                <th scope="col">A-Z</th>
+                                                <th scope="col">사전</th>
+                                            </tr>
+                                            <tr>
+                                                <td>날씨</td>
+                                                <td>네이버 MY CAR</td>
+                                                <td>네이버 게임</td>
+                                                <td>네이버 예약</td>
+                                                <td>네이버플러스 멤버십</td>
+                                                <td>뉴스</td>
+                                                <td>데이터랩</td>
+                                                <td>메모</td>
+                                            </tr>
+                                            <tr>
+                                                <td>네이버 MY CAR</td>
+                                                <td>스토어 개설</td>
+                                                <td>지역업체 등록</td>
+                                                <td>엑스퍼트 등록</td>
+                                            </tr>
+                                            <tr>
+                                                <td>네이버 게임</td>
+                                                <td>오픈 API</td>
+                                                <td>오픈소스</td>
+                                                <td>네이버 D2</td>
+                                                <td>네이버 D2SF</td>
+                                                <td>네이버 랩스</td>
+                                            </tr>
+                                            <tr>
+                                                <td>네이버 예약</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
+            </div>
+            <div id="rank">
+                <ul id="rank-list">
+                    <li><a href="#">1 순위</a></li>
+                    <li><a href="#">2 순위</a></li>
+                    <li><a href="#">3 순위</a></li>
+                    <li><a href="#">4 순위</a></li>
+                    <li><a href="#">5 순위</a></li>
+                    <li><a href="#">6 순위</a></li>
+                    <li><a href="#">7 순위</a></li>
+                    <li><a href="#">8 순위</a></li>
+                    <li><a href="#">9 순위</a></li>
+                    <li><a href="#">10 순위</a></li>
+                </ul>
             </div>
             <hr>
 
@@ -193,24 +182,131 @@
 
         <!-- 메인 -->
         <div id="main">
-
+            <div id="left-info">
+                <div id="main-ad">
+                    <img id="main-ad-img" src="img/luvd.jpg">
+                </div>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>데일리안</td>
+                                        <td>한국경제</td>
+                                        <td>노컷뉴스</td>
+                                        <td>초이스경제</td>
+                                    </tr>
+                                    <tr>
+                                        <td>스포츠동아</td>
+                                        <td>SBS</td>
+                                        <td>YTN</td>
+                                        <td>KBS WORLD</td>
+                                    </tr>
+                                    <tr>
+                                        <td>한국일보</td>
+                                        <td>독서신문</td>
+                                        <td>SBSfunE</td>
+                                        <td>월간중앙</td>
+                                    </tr>
+                                    <tr>
+                                        <td>스포츠한국</td>
+                                        <td>MBC</td>
+                                        <td>경향신문</td>
+                                        <td>헤럴드경제</td>
+                                    </tr>
+                                    <tr>
+                                        <td>법률신문</td>
+                                        <td>한겨례</td>
+                                        <td>뉴스타파</td>
+                                        <td>OSEN</td>
+                                    </tr>
+                                    <tr>
+                                        <td>뉴스핌</td>
+                                        <td>디자인정글</td>
+                                        <td>매일노동뉴스</td>
+                                        <td>비즈한국</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="carousel-item">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>KNN</td>
+                                        <td>농민신문</td>
+                                        <td>아이뉴스24</td>
+                                        <td>Korea JoongAng Daily</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M이코노미뉴스</td>
+                                        <td>파이낸셜뉴스</td>
+                                        <td>이데일리</td>
+                                        <td>중앙일보</td>
+                                    </tr>
+                                    <tr>
+                                        <td>스포츠조선</td>
+                                        <td>연합뉴스TV</td>
+                                        <td>SBSfunE</td>
+                                        <td>smartPC사랑</td>
+                                    </tr>
+                                    <tr>
+                                        <td>월간중앙</td>
+                                        <td>BBS NEWS</td>
+                                        <td>미디어오늘</td>
+                                        <td>신아일보</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTBC</td>
+                                        <td>KBS</td>
+                                        <td>노컷뉴스</td>
+                                        <td>시사저널</td>
+                                    </tr>
+                                    <tr>
+                                        <td>동아일보</td>
+                                        <td>국방일보</td>
+                                        <td>The Korea Times</td>
+                                        <td>시사IN</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <strong aria-hidden="true">
+                            <<strong>
+                                <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <strong aria-hidden="true">></strong>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div id="right-info">
+                <div id="login-form">
+                    <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+                    <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"><button id="login-btn"><strong>NAVER 로그인</strong></button></a>
+                    <p><a href="https://nid.naver.com/user2/help/idInquiry.nhn?menu=idinquiry">아이디</a><a href="https://nid.naver.com/user2/help/pwInquiry.nhn?menu=pwinquiry">비밀번호찾기</a><a href="https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=ko_KR&cpno=" id="sign-up">회원가입</a></p>
+                </div>
+            </div>
         </div>
 
 
 
 
         <!-- footer -->
-        <div id="footer">
-            <!-- 카드 섹션 -->
-            <div id="ad"></div>
+        <!-- <div id="footer">
             <hr>
-            <div id="announce-menu"></div>
-            <a href="https://www.naver.com/NOTICE">
-                <div id="announce-page"><span>공지사항</span></div>
-            </a>
-            <a href="https://www.naver.com/more.html">
-                <div id="service"><span>서비스 전체보기</span></div>
-            </a>
+            <div id="announce-menu"> <a href="https://www.naver.com/NOTICE">
+                    <div id="announce-page"><strong>공지사항</strong></div>
+                </a>
+                <a href="https://www.naver.com/more.html">
+                    <div id="service"><strong>서비스 전체보기</strong></div>
+                </a>
+            </div>
+
             <hr>
             <div id="announce-with">
                 <table>
@@ -239,7 +335,6 @@
                     </tbody>
                 </table>
             </div>
-            <hr>
             <div id="announce-policy">
                 <a href="https://www.navercorp.com/"><span>회사소개</span></a>
                 <a href="https://recruit.navercorp.com/naver/recruitMain"><span>인재채용</span></a>
@@ -251,7 +346,8 @@
                 <a href="https://help.naver.com/"><span>고객센터</span></a>
                 <a href="https://www.navercorp.com/" target="_sub"><span>© Naver Corp.</span></a>
             </div>
-        </div>
+            <hr>
+        </div> -->
     </div>
 </body>
 

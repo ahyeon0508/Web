@@ -1,0 +1,173 @@
+#wrapper{
+    /* margin: 0 100px 0 100px; */
+    position: absolute;
+    left: 250px;
+    right: 250px;
+}
+
+a:link,
+a:visited,
+a:hover {
+    color: #a09f9f;
+    text-decoration: none;
+}
+
+button{
+    border: 0;
+    outline: 0;
+}
+
+#shortcut {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
+
+#search-area {
+    margin: 30px 0 40px 50px;
+}
+
+#logo {
+    float: left;
+    margin-right: 20px;
+}
+
+#naver-logo {
+    width: 200px;
+}
+
+#search-bar {
+    width: 600px;
+    height: 45px;
+    border: 2px solid #2DB400;
+    margin-top: 10px;
+}
+
+#search-btn {
+    width: 50px;
+    height: 45px;
+    background-image: url("img/search.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#plus {
+    width: 500px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#menu-bar {
+    margin: -20px 0 -20px 0;
+}
+
+#footer {
+    width: auto;
+    background-color: #fafbfc;
+    padding-bottom: 50px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+#footer > table {
+    border-collapse: collapse;
+    float: left;
+}
+
+#footer > td {
+    color: #a09f9f;
+    width: 150px;
+}
+
+#service {
+    float: right;
+}
+
+#announce-menu{
+    margin-bottom: 55px;
+}
+
+#announce-menu > a{
+    color: black;
+}
+
+#announce-page {
+    float: left;
+}
+
+#announce-with{
+    float: left;
+}
+
+#announce-policy{
+    float: left;
+}
+
+#left-info{
+    float: left;
+    width: 800px;
+    /* background-color: darkgray; */
+}
+
+/* .carousel-inner{
+    width: 700px;
+} */
+
+#main-ad{
+    width: 750px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+#main-ad-img{
+    width: 750px;
+    height: 200px;
+    margin: auto;
+}
+
+#carouselExampleControls{
+    width: 750px;
+    margin: auto;
+}
+
+#left-info table td{
+    text-align: center;
+    width: 300px;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    box-shadow: 3px 3px 3px gray;
+    border-radius: 100px;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
+#right-info{
+    position: absolute;
+    right: 20px;
+}
+
+#login-btn{
+    background-color: #2DB400;
+    color: white;
+    width: 250px;
+    height: 40px;
+    margin: 0 0 15px 50px;
+}
+
+#login-form{
+    width: 350px;
+    height: 120px;
+}
+
+#login-form > p{
+    margin-left: 15px;
+}
+
+#sign-up{
+    float: right;
+    margin-left: -20px;
+}
