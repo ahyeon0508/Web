@@ -23,7 +23,21 @@
             var height = $('.rank-list li').height();
 
             function scroll(index) {
-                $('.rank-list ol').delay(2000).animate({
+                $('.rank-list ol').delay(3000).animate({
+                    top: -height * index,
+                }, function () {
+                    scroll((index + 1) % count);
+                });
+            }
+            scroll(1);
+        });
+
+        $(function () {
+            var count = $('.news-list li').length;
+            var height = $('.news-list li').height();
+
+            function scroll(index) {
+                $('.news-list ol').delay(3000).animate({
                     top: -height * index,
                 }, function () {
                     scroll((index + 1) % count);
@@ -184,9 +198,202 @@
 
             </div>
         </div>
-        <div class="item">left-main</div>
-        <div class="item">right-main</div>
-        <div class="item">footer</div>
+        
+        <div class="item">
+            <div class="main-left-ad">
+                <img class="main-left-ad-img" src="img/luvd.jpg">
+            </div>
+            <div class="news">
+                <dl class="news-list">
+                    <dt>뉴스</dt>
+                    <dd>
+                        <ol>
+                            <li><a href="#"><strong>00뉴스</strong> > 0128</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0228</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0328</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0428</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0528</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0628</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0728</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0828</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 0928</a></li>
+                            <li><a href="#"><strong>00뉴스</strong> > 1028</a></li>
+                        </ol>
+                    </dd>
+                </dl>
+                <dl class="news-shortcut">
+                    <a href="https://news.naver.com/">네이버뉴스</a>
+                    <a href="https://entertain.naver.com/home">연예</a>
+                    <a href="https://sports.news.naver.com/index.nhn">스포츠</a>
+                    <a href="https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101">경제</a>
+                </dl>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>데일리안</td>
+                                    <td>한국경제</td>
+                                    <td>노컷뉴스</td>
+                                    <td>초이스경제</td>
+                                </tr>
+                                <tr>
+                                    <td>스포츠동아</td>
+                                    <td>SBS</td>
+                                    <td>YTN</td>
+                                    <td>KBS WORLD</td>
+                                </tr>
+                                <tr>
+                                    <td>한국일보</td>
+                                    <td>독서신문</td>
+                                    <td>SBSfunE</td>
+                                    <td>월간중앙</td>
+                                </tr>
+                                <tr>
+                                    <td>스포츠한국</td>
+                                    <td>MBC</td>
+                                    <td>경향신문</td>
+                                    <td>헤럴드경제</td>
+                                </tr>
+                                <tr>
+                                    <td>법률신문</td>
+                                    <td>한겨례</td>
+                                    <td>뉴스타파</td>
+                                    <td>OSEN</td>
+                                </tr>
+                                <tr>
+                                    <td>뉴스핌</td>
+                                    <td>디자인정글</td>
+                                    <td>매일노동뉴스</td>
+                                    <td>비즈한국</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="carousel-item">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>KNN</td>
+                                    <td>농민신문</td>
+                                    <td>아이뉴스24</td>
+                                    <td>Korea JoongAng Daily</td>
+                                </tr>
+                                <tr>
+                                    <td>M이코노미뉴스</td>
+                                    <td>파이낸셜뉴스</td>
+                                    <td>이데일리</td>
+                                    <td>중앙일보</td>
+                                </tr>
+                                <tr>
+                                    <td>스포츠조선</td>
+                                    <td>연합뉴스TV</td>
+                                    <td>SBSfunE</td>
+                                    <td>smartPC사랑</td>
+                                </tr>
+                                <tr>
+                                    <td>월간중앙</td>
+                                    <td>BBS NEWS</td>
+                                    <td>미디어오늘</td>
+                                    <td>신아일보</td>
+                                </tr>
+                                <tr>
+                                    <td>JTBC</td>
+                                    <td>KBS</td>
+                                    <td>노컷뉴스</td>
+                                    <td>시사저널</td>
+                                </tr>
+                                <tr>
+                                    <td>동아일보</td>
+                                    <td>국방일보</td>
+                                    <td>The Korea Times</td>
+                                    <td>시사IN</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <strong aria-hidden="true">
+                        <<strong>
+                            <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <strong aria-hidden="true">></strong>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="today-writing">
+                <p>오늘 읽을만한 글 주제별로 분류된 다양한 글 모음</p>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="login-form">
+                <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+                <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"><button
+                    class="login-btn"><strong>NAVER 로그인</strong></button></a>
+                <p><a href="https://nid.naver.com/user2/help/idInquiry.nhn?menu=idinquiry">아이디 </a><a
+                        href="https://nid.naver.com/user2/help/pwInquiry.nhn?menu=pwinquiry">비밀번호찾기</a><a
+                        href="https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=ko_KR&cpno=" id="sign-up">회원가입</a>
+                </p>
+            </div>
+            <div class="weather"></div>
+            <div class="main-right-ad">
+                <img class="main-right-ad-img" src="img/luvd.jpg">
+            </div>
+            <div class="shopping">
+                <strong>트렌드쇼핑</strong>
+            </div>
+        </div>
+
+        <div class="item">
+            <p>풋터</p>
+            <div class="announce-menu">
+                <a href="https://www.naver.com/NOTICE"><strong>공지사항</strong></a>
+                <a href="https://www.naver.com/more.html"><strong>서비스 전체보기</strong></a>
+            </div>
+            <div class="announce-with">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Creators</th>
+                            <td>크리에이터</td>
+                            <td>스몰비지니스</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Partners</th>
+                            <td>비즈니스광고</td>
+                            <td>스토어 개설</td>
+                            <td>지역업체 등록</td>
+                            <td>엑스퍼트 등록</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Developers</th>
+                            <td>네이버 개발자 센터</td>
+                            <td>오픈 API</td>
+                            <td>오픈소스</td>
+                            <td>네이버 D2</td>
+                            <td>네이버 D2SF</td>
+                            <td>네이버 랩스</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="announce-policy">
+                <a href="https://www.navercorp.com/"><span>회사소개</span></a>
+                <a href="https://recruit.navercorp.com/naver/recruitMain"><span>인재채용</span></a>
+                <a href="https://www.navercorp.com/naver/proposalGuide"><span>제휴제안</span></a>
+                <a href="https://policy.naver.com/policy/service.html"><span>이용약관</span></a>
+                <a href="https://policy.naver.com/policy/privacy.html"><span>개인정보처리방침</span></a>
+                <a href="https://policy.naver.com/policy/youthpolicy.html"><span>청소년보호정책</span></a>
+                <a href="https://policy.naver.com/policy/spamcheck.html"><span>네이버 정책</span></a>
+                <a href="https://help.naver.com/"><span>고객센터</span></a>
+                <a href="https://www.navercorp.com/" target="_sub"><span>© Naver Corp.</span></a>
+            </div>
+        </div>
     </div>
 </body>
 
