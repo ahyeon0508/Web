@@ -26,22 +26,21 @@ button{
     display: grid;
     gap: 1.5em;
     grid-template-rows: 150px 50px 150px 100px;
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 .item:nth-child(3) {
     grid-column: 3;
     display: grid;
     gap: 1.5em;
-    grid-template-rows: 20px 50px 50px 500px;
-    background-color: yellow;
+    grid-template-rows: 150px 50px 50px 500px;
 }
 
 .item:nth-child(4) {
     grid-column: 1/4;
     display: grid;
-    grid-template-rows: 20px 50px 50px;
-    background-color: yellow;
+    gap: 1.5em;
+    grid-template-rows: 20px 70px 20px;
 }
 
 .header{
@@ -87,7 +86,7 @@ input:focus {
 
 .menu-bar {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 5fr 1fr;
 }
 
 .rank {
@@ -207,18 +206,27 @@ input:focus {
     margin-left: -20px;
 }
 
-.weather{
-    border: 2px solid #2DB400;
+.info{
+    border: 1px solid #dae1e6;
     width: 350px;
     height: 50px;
-    background-color: black;
-}
-
-.shopping{
-    height: 500px;
+    background-color: white;
 }
 
 .main-right-ad-img{
+    border: 1px solid #dae1e6;
     width: 350px;
     height: 70px;
+}
+
+.service-shrotcut{
+    float: right;
+}
+
+.announce-menu a{
+    color: black;
+}
+
+.carousel{
+    display: inline;
 }
