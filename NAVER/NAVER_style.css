@@ -13,7 +13,6 @@ button{
 .container {
     display: grid;
     column-gap: 1em;
-    grid-auto-flow: row;
 }
 
 .item:nth-child(1) {
@@ -26,21 +25,23 @@ button{
     display: grid;
     gap: 1.5em;
     grid-template-rows: 150px 50px 150px 100px;
-    /* background-color: orange; */
+    font-size: 14px;
 }
 
 .item:nth-child(3) {
     grid-column: 3;
     display: grid;
     gap: 1.5em;
-    grid-template-rows: 150px 50px 50px 500px;
+    grid-template-rows: 150px 50px 70px 300px;
+    font-size: 14px;
 }
 
 .item:nth-child(4) {
     grid-column: 1/4;
     display: grid;
     gap: 1.5em;
-    grid-template-rows: 20px 70px 20px;
+    grid-template-rows: 20px 70px 100px;
+    font-size: 13px;
 }
 
 .header{
@@ -49,6 +50,16 @@ button{
 
 .shortcut{
     justify-self: end;
+    margin: 10px 20px 0 0;
+    font-size: 12px;
+}
+
+.jr:hover{
+    color: orange;
+}
+
+.happybean:hover{
+    color: #2DB400;
 }
 
 .search-area {
@@ -126,7 +137,7 @@ input:focus {
     overflow: hidden;
     background-color: #f7f9fa;
     border: 1px solid #dae1e6;
-    padding: 12px 0 0 0;
+    padding: 13px 0 0 0;
     width: 700px;
     height: 50px;
 }
@@ -143,7 +154,7 @@ input:focus {
 .news-list ol {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -20px;
     margin: 0;
     list-style-type: none;
 }
@@ -158,9 +169,8 @@ input:focus {
 
 .news-shortcut{
     float: right;
-    margin: -15px 10px 0 0;
+    margin: -15px 20px 0 0;
 }
-
 
 #carouselExampleControls{
     width: 700px;
@@ -179,6 +189,13 @@ input:focus {
     height: 30px;
 }
 
+.today-writing-title{
+    color: gray;
+    font-size: 12px;
+}
+
+/* right-info */
+
 .login-btn{
     background-color: #2DB400;
     color: white;
@@ -190,7 +207,6 @@ input:focus {
 .login-form{
     padding: 20px 0 0 20px;
     width: 350px;
-    height: 150px;
     background-color: #f7f9fa;
     border: 1px solid #dae1e6
 }
@@ -203,14 +219,17 @@ input:focus {
 
 .sign-up{
     float: right;
-    margin-left: -20px;
+    margin-right: 20px;
 }
 
 .info{
     border: 1px solid #dae1e6;
     width: 350px;
-    height: 50px;
     background-color: white;
+}
+
+.pagination{
+    margin: 10px 10px 0 0;
 }
 
 .main-right-ad-img{
@@ -219,6 +238,38 @@ input:focus {
     height: 70px;
 }
 
+.shopping{
+    display: grid;
+    grid-template-columns: 100px;
+    grid-template-rows: 50px 50px auto;
+    column-gap: 1em;
+}
+
+.trend{
+    grid-template-columns: 100px;
+    display: grid;
+    justify-self: center;
+}
+
+#pills-tab{
+    grid-column: 2;
+    margin-top: -10px;
+    align-self: center;
+    justify-self: end;
+}
+
+.shopping-frame{
+    width: 350px;
+    border: 1px solid #dae1e6;
+}
+
+.item-mall{
+    border: 1px solid #dae1e6;
+    background-color: #f7f9fa;
+    text-align: center;
+}
+
+/* footer */
 .service-shrotcut{
     float: right;
 }
@@ -227,6 +278,3 @@ input:focus {
     color: black;
 }
 
-.carousel{
-    display: inline;
-}
