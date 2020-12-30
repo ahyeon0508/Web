@@ -24,7 +24,7 @@ button{
     grid-column: 1/3;
     display: grid;
     gap: 1.5em;
-    grid-template-rows: 150px 50px 170px 100px;
+    grid-template-rows: 150px 50px 170px auto;
     font-size: 14px;
 }
 
@@ -33,7 +33,7 @@ button{
     display: grid;
     gap: 1.5em;
     grid-template-columns: 350px;
-    grid-template-rows: 150px 50px 70px 300px;
+    grid-template-rows: 150px 50px 70px 450px;
     font-size: 14px;
 }
 
@@ -194,15 +194,9 @@ input:focus {
     height: 30px;
 }
 
-.today-writing-title{
+.today-written-title{
     color: gray;
     font-size: 12px;
-}
-
-.nav-writing{
-    width: 87px;
-    text-align: center;
-    font-size: 13px;
 }
 
 /* right-info */
@@ -212,7 +206,7 @@ input:focus {
     color: white;
     width: 300px;
     height: 50px;
-    margin: 0 0 15px 10px;
+    margin-bottom: 15px;
 }
 
 .login-form{
@@ -223,14 +217,13 @@ input:focus {
 }
 
 .login-form > p{
-    margin-left: 15px;
     color: #a09f9f;
     font-size: 12px;
 }
 
 .sign-up{
     float: right;
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .info{
@@ -239,8 +232,13 @@ input:focus {
     background-color: white;
 }
 
-.pagination{
-    margin: 10px 10px 0 0;
+#info-data-container{
+    margin: 13px;
+}
+
+#info-pagination{
+    float: right;
+    margin: -41px 10px auto;
 }
 
 .main-right-ad-img{
@@ -254,6 +252,10 @@ input:focus {
     grid-template-columns: 100px;
     grid-template-rows: 50px 50px auto;
     column-gap: 1em;
+}
+
+.shopping a{
+    color: black;
 }
 
 .trend{
@@ -279,6 +281,54 @@ input:focus {
     background-color: #f7f9fa;
     text-align: center;
     padding: 10px;
+}
+
+#shopping-pagination{
+    float: right;
+    margin: 10px 15px 50px 0;
+}
+
+#shopping-data-container img{
+    width: 88px;
+    height: 146px;
+    margin: 60px 15px 10px 15px;
+}
+
+#shopping-Mall-pagination{
+    float: right;
+    margin: 10px 15px 50px 0;
+}
+
+#shopping-Mall-data-container img{
+    width: 88px;
+    height: 146px;
+    margin: 60px 15px 10px 15px;
+}
+
+
+#shopping-Men-pagination{
+    float: right;
+    margin: 10px 15px 50px 0;
+}
+
+#shopping-Men-data-container img{
+    width: 88px;
+    height: 146px;
+    margin: 60px 15px 10px 15px;
+}
+
+.img-container{
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+}
+
+.shopping-data-img{
+    margin-top: 40px;
+}
+
+.shopping-data-img p{
+    text-align: center;
 }
 
 /* footer */
