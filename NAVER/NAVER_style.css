@@ -47,6 +47,7 @@ button{
     border-top: 1px solid #e4e8eb;
 }
 
+/* header */
 .header{
     display: grid;
 }
@@ -65,6 +66,7 @@ button{
     color: #2DB400;
 }
 
+/* 검색창 */
 .search-area {
     display: grid;
     grid-template-columns: 200px 600px;
@@ -90,19 +92,22 @@ button{
     background-size: cover;
 }
 
-.plus-table {
-    width: 700px;
-}
-
 input:focus {
     outline: none;
 }
 
+/* 더보기 */
+.plus-table {
+    width: 700px;
+}
+
+/* 메뉴 */
 .menu-bar {
     display: grid;
     grid-template-columns: 5fr 1fr;
 }
 
+/* 실시간 검색어 */
 .rank {
     overflow: hidden;
     padding: 17px 0 0 0;
@@ -131,11 +136,14 @@ input:focus {
     height: 80px;
 }
 
+/* main-left */
+/* 광고 */
 .main-left-ad-img{
     width: 700px;
     height: 150px;
 }
 
+/* 실시간 뉴스 */
 .news {
     overflow: hidden;
     background-color: #f7f9fa;
@@ -175,6 +183,7 @@ input:focus {
     margin: -15px 20px 0 0;
 }
 
+/* 언론사 */
 #carouselExampleControls{
     width: 700px;
 }
@@ -194,13 +203,48 @@ input:focus {
     height: 30px;
 }
 
+/* 오늘 읽을만한 글 */
+.written-data-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+}
+
+#written-pagination{
+    float: right;
+    margin-right: 30px;
+}
+
+#written-container{
+    margin-top: 60px;
+}
+
 .today-written-title{
     color: gray;
     font-size: 12px;
 }
 
-/* right-info */
+.written-data-img{
+    width: 210px;
+    height: 120px;
+    margin-bottom: 10px;
+}
 
+.written-data-category{
+    margin-bottom: -1px;
+    color: #2DB400;
+}
+
+.written-data-title{
+    margin-bottom: -1px;
+}
+
+.written-data-sub{
+    color: gray;
+    font-size: 12px;
+}
+
+/* right-info */
+/* 로그인 */
 .login-btn{
     background-color: #2DB400;
     color: white;
@@ -226,6 +270,7 @@ input:focus {
     margin-right: 25px;
 }
 
+/* 정보 */
 .info{
     border: 1px solid #dae1e6;
     width: 350px;
@@ -241,12 +286,14 @@ input:focus {
     margin: -41px 10px auto;
 }
 
+/* 광고 */
 .main-right-ad-img{
     border: 1px solid #dae1e6;
     width: 350px;
     height: 70px;
 }
 
+/* 트렌드쇼핑 */
 .shopping{
     display: grid;
     grid-template-columns: 100px;
@@ -304,7 +351,6 @@ input:focus {
     height: 146px;
     margin: 60px 15px 10px 15px;
 }
-
 
 #shopping-Men-pagination{
     float: right;

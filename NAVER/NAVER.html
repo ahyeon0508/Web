@@ -49,8 +49,8 @@
         });
 
         $(function () {
-            let container = $('#info-pagination');
-            container.pagination({
+            let info_container = $('#info-pagination');
+            info_container.pagination({
                 dataSource: [
                     { name: "증시 코스피" },
                     { name: "증시 코스닥" },
@@ -75,8 +75,8 @@
         });
 
         $(function () {
-            let container = $('#shopping-pagination');
-            container.pagination({
+            let shopping_container = $('#shopping-pagination');
+            shopping_container.pagination({
                 dataSource: [
                     { name: "https://pelicana.co.kr/resources/images/menu/best_menu03_200623.jpg" },
                     { name: "https://miro.medium.com/max/2560/1*2kHAAe4MpPTXMpeIeULegg.jpeg" },
@@ -105,8 +105,8 @@
         });
 
         $(function () {
-            let container = $('#shopping-Mall-pagination');
-            container.pagination({
+            let shopping_Mall_container = $('#shopping-Mall-pagination');
+            shopping_Mall_container.pagination({
                 dataSource: [
                     { name: "https://pelicana.co.kr/resources/images/menu/best_menu03_200623.jpg" },
                     { name: "https://miro.medium.com/max/2560/1*2kHAAe4MpPTXMpeIeULegg.jpeg" },
@@ -132,8 +132,8 @@
         });
 
         $(function () {
-            let container = $('#shopping-Men-pagination');
-            container.pagination({
+            let shopping_Men_container = $('#shopping-Men-pagination');
+            shopping_Men_container.pagination({
                 dataSource: [
                     { name: "https://t1.daumcdn.net/liveboard/babshim/68e65038e67947978c410e73027cbc87.JPG" },
                     { name: "https://cdn.dominos.co.kr/admin/upload/goods/20200311_x8StB1t3.jpg" },
@@ -153,10 +153,46 @@
                     });
 
                     dataHtml += '</div>';
-                    
+
                     $("#shopping-Men-data-container").html(dataHtml);
                 }
             })
+        });
+
+        $(function(){
+            let data = {
+                info1: {
+                    img: "https://t1.daumcdn.net/cfile/tistory/9982FE505BFEB5C736",
+                    category: "TV예능",
+                    title: "김종민 우수상",
+                    sub: "2020 MBC 방송연예대상 13시간 전"
+                },
+                info2: {
+                    img: "https://img.insight.co.kr/static/2016/01/07/2000/18biiu7o4979nqly5dh6.jpg",
+                    category: "TV예능",
+                    title: "유재석 대상",
+                    sub: "2020 MBC 방송연예대상 14시간 전"
+                },
+                info3: {
+                    img: "https://post-phinf.pstatic.net/MjAxODAzMDJfMjY4/MDAxNTE5OTgwMjM1MDQw.pOom3Uq3TuAq_RI-e0MJtsG7zobNHNK54pzOcIMY2zkg.LKoRys3NocCoi4OeeNKhzhgxWq0sXMbPwqXggEgPqTIg.JPEG/%EC%9D%B4%ED%9A%A8%EB%A6%AC_%EB%A9%94%EC%9D%B4%ED%81%AC%EC%97%85.jpg?type=w1200",
+                    category: "TV예능",
+                    title: "이효리 최우수상",
+                    sub: "2020 MBC 방송연예대상 13시간 전"
+                }
+            };
+
+            let item = document.getElementsByClassName("page-item");
+
+            for (let i = 1; i < item.length - 1; i++) {
+                item[i].onclick = function () {
+                    let div = document.createElement('div');
+                    div.className = "written-list";
+                    div.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + data.info1.img + '></img> <p class="written-data-category">' + data.info1.category + '</p> <p class="written-data-title">' + data.info1.title + '</p>' + '<p class="written-data-sub">' + data.info1.sub + '</p></div>';
+                    console.log(div)
+                    document.body.append(div);
+                }
+            }
+
         });
 
     </script>
@@ -489,8 +525,21 @@
             </div>
             <div class="today-written">
                 <p><strong>오늘 읽을만한 글</strong> <span class="today-written-title">주제별로 분류된 다양한 글 모음</span></p>
-                <div id="written-data-container"></div>
-                <div id="written-pagination"></div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#"><</a></li>
+                        <li class="page-item"><a class="page-link" href="#">엔터</a></li>
+                        <li class="page-item"><a class="page-link" href="#">스포츠</a></li>
+                        <li class="page-item"><a class="page-link" href="#">자동차</a></li>
+                        <li class="page-item"><a class="page-link" href="#">웹툰</a></li>
+                        <li class="page-item"><a class="page-link" href="#">경제M</a></li>
+                        <li class="page-item"><a class="page-link" href="#">푸드</a></li>
+                        <li class="page-item"><a class="page-link" href="#">게임</a></li>
+                        <li class="page-item"><a class="page-link" href="#">영화</a></li>
+                        <li class="page-item"><a class="page-link" href="#">></a></li>
+                        <div id="#written-data-container"></div>
+                    </ul>
+                </nav>
             </div>
         </div>
 
@@ -516,13 +565,16 @@
                     class="trend"><strong>트렌드쇼핑</strong></a>
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item nav-shopping">
-                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">상품</a>
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true">상품</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">쇼핑몰</a>
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">쇼핑몰</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">MEN</a>
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">MEN</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
@@ -544,7 +596,8 @@
                             <div class="item-info">
                                 <div id="shopping-Mall-pagination"></div>
                                 <div id="shopping-Mall-data-container"></div>
-                            </div>                        </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="shopping-frame">
