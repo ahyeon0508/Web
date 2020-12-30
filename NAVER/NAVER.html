@@ -159,7 +159,7 @@
             })
         });
 
-        $(function(){
+        $(function () {
             let data = {
                 info1: {
                     img: "https://t1.daumcdn.net/cfile/tistory/9982FE505BFEB5C736",
@@ -181,18 +181,54 @@
                 }
             };
 
+            var current = 1;
             let item = document.getElementsByClassName("page-item");
+            let container = document.getElementById("written-data-container");
 
-            for (let i = 1; i < item.length - 1; i++) {
+            // 값 변경되는지 체크하기 위해
+            for (let i = 2; i < item.length - 1; i++) {
                 item[i].onclick = function () {
+                    current = document.getElementsByClassName("page-item active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active"
                     let div = document.createElement('div');
                     div.className = "written-list";
-                    div.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + data.info1.img + '></img> <p class="written-data-category">' + data.info1.category + '</p> <p class="written-data-title">' + data.info1.title + '</p>' + '<p class="written-data-sub">' + data.info1.sub + '</p></div>';
-                    console.log(div)
-                    document.body.append(div);
+                    container.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + data.info1.img + '></img> <p class="written-data-category">' + data.info1.category + '</p> <p class="written-data-title">' + data.info1.title + '</p>' + '<p class="written-data-sub">' + data.info1.sub + '</p></div>';
+                    container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + data.info2.img + '></img> <p class="written-data-category">' + data.info2.category + '</p> <p class="written-data-title">' + data.info2.title + '</p>' + '<p class="written-data-sub">' + data.info2.sub + '</p></div>';
+                    container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + data.info3.img + '></img> <p class="written-data-category">' + data.info3.category + '</p> <p class="written-data-title">' + data.info3.title + '</p>' + '<p class="written-data-sub">' + data.info3.sub + '</p></div>';
+                    current = i;
                 }
-            }
+            };
 
+            if (item[1].onclick = function () {
+                current = document.getElementsByClassName("page-item active");
+                current[0].className = current[0].className.replace(" active", "");
+                item[1].className = "page-item active"
+                let div = document.createElement('div');
+                div.className = "written-list";
+                container.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '연애의자격' + '</p>' + '<p class="written-data-sub">' + '연애결혼' + '</p></div>';
+                container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '리데이트' + '</p>' + '<p class="written-data-sub">' + '재회' + '</p></div>';
+                container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '포데이트' + '</p>' + '<p class="written-data-sub">' + '연애시작' + '</p></div>'
+            });
+
+            item[0].onclick = function(){
+                if(current == 1){
+                    item[1].onclick();
+                }
+                else{
+                    item[current-1].onclick();
+                }
+            };
+
+            item[item.length-1].onclick = function(){
+                if(current == item.length-2){
+                    item[1].onclick();
+                    current = 1;
+                }
+                else{
+                    item[current+1].onclick();
+                }
+            };
         });
 
     </script>
@@ -527,8 +563,8 @@
                 <p><strong>오늘 읽을만한 글</strong> <span class="today-written-title">주제별로 분류된 다양한 글 모음</span></p>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#"><</a></li>
-                        <li class="page-item"><a class="page-link" href="#">엔터</a></li>
+                        <li class="page-item"><a class="page-link" href="#">< </a></li>
+                        <li class="page-item active"><a class="page-link" href="#">엔터</a></li>
                         <li class="page-item"><a class="page-link" href="#">스포츠</a></li>
                         <li class="page-item"><a class="page-link" href="#">자동차</a></li>
                         <li class="page-item"><a class="page-link" href="#">웹툰</a></li>
@@ -537,9 +573,28 @@
                         <li class="page-item"><a class="page-link" href="#">게임</a></li>
                         <li class="page-item"><a class="page-link" href="#">영화</a></li>
                         <li class="page-item"><a class="page-link" href="#">></a></li>
-                        <div id="#written-data-container"></div>
-                    </ul>
-                </nav>
+            </div>
+            </ul>
+            </nav>
+            <div id="written-data-container">
+                <div class="written-data-frame">
+                    <img class="written-data-img" src="img/luvd.jpg"></img>
+                    <p class="written-data-category">회사소개</p>
+                    <p class="written-data-title">연애의자격</p>
+                    <p class="written-data-sub">연애</p>
+                </div>
+                <div class="written-data-frame">
+                    <img class="written-data-img" src="img/luvd.jpg"></img>
+                    <p class="written-data-category">회사소개</p>
+                    <p class="written-data-title">리데이트</p>
+                    <p class="written-data-sub">재회</p>
+                </div>
+                <div class="written-data-frame">
+                    <img class="written-data-img" src="img/luvd.jpg"></img>
+                    <p class="written-data-category">회사소개</p>
+                    <p class="written-data-title">포데이트</p>
+                    <p class="written-data-sub">연애시작</p>
+                </div>
             </div>
         </div>
 

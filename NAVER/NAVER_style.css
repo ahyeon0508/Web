@@ -204,18 +204,25 @@ input:focus {
 }
 
 /* 오늘 읽을만한 글 */
-.written-data-container{
+.page-item:nth-child(1), .page-item:nth-child(10){
+    width: 30px;
+}
+
+.page-item{
+    width: 80px;
+    text-align: center;
+}
+
+#written-data-container{
+    margin: -350px 0 0 -30px;
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
+    gap: 2em;
+    justify-self: center;
 }
 
-#written-pagination{
-    float: right;
-    margin-right: 30px;
-}
-
-#written-container{
-    margin-top: 60px;
+.written-data-frame{
+    margin-top: 300px
 }
 
 .today-written-title{
@@ -231,7 +238,7 @@ input:focus {
 
 .written-data-category{
     margin-bottom: -1px;
-    color: #2DB400;
+    color: #007bff;
 }
 
 .written-data-title{
