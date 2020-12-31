@@ -82,6 +82,7 @@ button{
     height: 45px;
     border: 2px solid #2DB400;
     margin-top: 10px;
+    padding: 10px;
 }
 
 .search-btn {
