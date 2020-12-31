@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 부트스트랩 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -15,10 +16,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
+    <!-- css & jquery -->
     <link rel="stylesheet" href="./NAVER_style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- autocomplete -->
+    <!-- jquery -->
+    <!-- search autocomplete -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -31,7 +35,7 @@
         });
     </script>
 
-    <!-- rank & pagination -->
+    <!-- rank & 정보 & 쇼핑 (+pagination) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
     <script>
@@ -173,8 +177,26 @@
                 }
             })
         });
+    
+        // 바닐라 js
 
-        $(function () {
+        // 언론사 마우스 이벤트
+        var press;
+
+        function mouseOverEvent(obj){
+            press = obj.innerHTML;
+            obj.style.backgroundColor = "#f7f9fa";
+            obj.innerHTML = '<tr><button>구독</button>&nbsp;<button>기사보기</button></tr>';
+        };
+
+        function mouseOutEvent(obj){
+            obj.style.backgroundColor = "White";
+            obj.style.color = "Black";
+            obj.innerHTML = press;
+        };
+
+        // 오늘 읽을만한 글
+        window.onload = function () {
             let data = {
                 info1: {
                     img: "https://t1.daumcdn.net/cfile/tistory/9982FE505BFEB5C736",
@@ -206,8 +228,6 @@
                     current = document.getElementsByClassName("page-item active");
                     current[0].className = current[0].className.replace(" active", "");
                     this.className += " active"
-                    let div = document.createElement('div');
-                    div.className = "written-list";
                     container.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + data.info1.img + '></img> <p class="written-data-category">' + data.info1.category + '</p> <p class="written-data-title">' + data.info1.title + '</p>' + '<p class="written-data-sub">' + data.info1.sub + '</p></div>';
                     container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + data.info2.img + '></img> <p class="written-data-category">' + data.info2.category + '</p> <p class="written-data-title">' + data.info2.title + '</p>' + '<p class="written-data-sub">' + data.info2.sub + '</p></div>';
                     container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + data.info3.img + '></img> <p class="written-data-category">' + data.info3.category + '</p> <p class="written-data-title">' + data.info3.title + '</p>' + '<p class="written-data-sub">' + data.info3.sub + '</p></div>';
@@ -219,8 +239,6 @@
                 current = document.getElementsByClassName("page-item active");
                 current[0].className = current[0].className.replace(" active", "");
                 item[1].className = "page-item active"
-                let div = document.createElement('div');
-                div.className = "written-list";
                 container.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '연애의자격' + '</p>' + '<p class="written-data-sub">' + '연애결혼' + '</p></div>';
                 container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '리데이트' + '</p>' + '<p class="written-data-sub">' + '재회' + '</p></div>';
                 container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '포데이트' + '</p>' + '<p class="written-data-sub">' + '연애시작' + '</p></div>'
@@ -245,7 +263,7 @@
                     item[current+1].onclick();
                 }
             };
-        });
+        };
 
     </script>
     <title>NAVER</title>
@@ -422,7 +440,7 @@
                             <dt>실시간 급상승 검색어</dt>
                             <dd>
                                 <ol class="rank-list-content">
-                                    <li><a href="#">1 순위</a></li>
+                                    <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%9C%A0%EC%9E%AC%EC%84%9D">1 유재석</a></li>
                                     <li><a href="#">2 순위</a></li>
                                     <li><a href="#">3 순위</a></li>
                                     <li><a href="#">4 순위</a></li>
@@ -435,6 +453,25 @@
                                 </ol>
                             </dd>
                         </dl>
+                    </div>
+                    <div class="rank-dropdown">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="nav-rank-dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu" id="rank-dropdown-content" aria-labelledby="nav-rank-dropdown">
+                                <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%9C%A0%EC%9E%AC%EC%84%9D">1 유재석</a>
+                                <a href="#">2 순위</a>
+                                <a href="#">3 순위</a>
+                                <a href="#">4 순위</a>
+                                <a href="#">5 순위</a>
+                                <a href="#">6 순위</a>
+                                <a href="#">7 순위</a>
+                                <a href="#">8 순위</a>
+                                <a href="#">9 순위</a>
+                                <a href="#">10 순위</a>
+                            </div>
+                        </li>
                     </div>
                 </div>
 
@@ -477,28 +514,28 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>데일리안</td>
-                                    <td>한국경제</td>
-                                    <td>노컷뉴스</td>
-                                    <td>초이스경제</td>
+                                    <td class="press" onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">데일리안</td> 
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">한국경제</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">노컷뉴스</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">초이스경제</td>
                                 </tr>
                                 <tr>
-                                    <td>스포츠동아</td>
-                                    <td>SBS</td>
-                                    <td>YTN</td>
-                                    <td>KBS WORLD</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">스포츠동아</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">SBS</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">YTN</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">KBS WORLD</td>
                                 </tr>
                                 <tr>
-                                    <td>한국일보</td>
-                                    <td>독서신문</td>
-                                    <td>SBSfunE</td>
-                                    <td>월간중앙</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">한국일보</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">독서신문</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">SBSfunE</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">월간중앙</td>
                                 </tr>
                                 <tr>
-                                    <td>스포츠한국</td>
-                                    <td>MBC</td>
-                                    <td>경향신문</td>
-                                    <td>헤럴드경제</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">스포츠한국</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">MBC</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">경향신문</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">헤럴드경제</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -507,28 +544,28 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>KNN</td>
-                                    <td>농민신문</td>
-                                    <td>아이뉴스24</td>
-                                    <td>Korea JoongAng Daily</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">KNN</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">농민신문</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">아이뉴스24</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">Korea JoongAng Daily</td>
                                 </tr>
                                 <tr>
-                                    <td>M이코노미뉴스</td>
-                                    <td>파이낸셜뉴스</td>
-                                    <td>이데일리</td>
-                                    <td>중앙일보</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">M이코노미뉴스</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">파이낸셜뉴스</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">이데일리</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">중앙일보</td>
                                 </tr>
                                 <tr>
-                                    <td>스포츠조선</td>
-                                    <td>연합뉴스TV</td>
-                                    <td>SBSfunE</td>
-                                    <td>smartPC사랑</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">스포츠조선</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">연합뉴스TV</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">SBSfunE</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">smartPC사랑</td>
                                 </tr>
                                 <tr>
-                                    <td>월간중앙</td>
-                                    <td>BBS NEWS</td>
-                                    <td>미디어오늘</td>
-                                    <td>신아일보</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">월간중앙</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">BBS NEWS</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">미디어오늘</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">신아일보</td>
                                 </tr>
 
                             </tbody>
@@ -589,9 +626,9 @@
                         <li class="page-item"><a class="page-link" href="#">게임</a></li>
                         <li class="page-item"><a class="page-link" href="#">영화</a></li>
                         <li class="page-item"><a class="page-link" href="#">></a></li>
+                    </ul>
+                </nav>
             </div>
-            </ul>
-            </nav>
             <div id="written-data-container">
                 <div class="written-data-frame">
                     <img class="written-data-img" src="img/luvd.jpg"></img>

@@ -105,14 +105,13 @@ input:focus {
 /* 메뉴 */
 .menu-bar {
     display: grid;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 900px 200px 50px;
 }
 
 /* 실시간 검색어 */
 .rank {
     overflow: hidden;
     padding: 17px 0 0 0;
-    width: 200px;
     height: 80px;
 }
 
@@ -135,6 +134,19 @@ input:focus {
 
 .rank-list li {
     height: 80px;
+}
+
+.rank-dropdown .dropdown{
+    list-style-type: none;
+    margin: 10px 0 0 -10px;
+}
+
+#rank-dropdown-content{
+    padding: 10px;
+}
+
+#rank-dropdown-content a{
+    display: block;
 }
 
 /* main-left */
@@ -215,7 +227,7 @@ input:focus {
 }
 
 #written-data-container{
-    margin: -350px 0 0 -30px;
+    margin: -350px 0 0 -50px;
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
     gap: 2em;
