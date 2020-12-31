@@ -39,6 +39,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
     <script>
+        // 실시간 검색어
+        let rank_data = ['유재석', '이승기', '이아현', '김종민', '송지효', '이광수', '2021년', 'SBS연기대상', '데이터', '새해']
+        $(function(){
+            var rank_dataHtml = '<div>';
+
+            for(var i = 0; i < rank_data.length-1; i++){
+                rank_dataHtml += '<li><a href="#">' + (i+1) + '&nbsp;' + rank_data[i] + '</a></li>';
+            }
+
+            rank_dataHtml += '</div>';
+
+            $(".rank-list-content").html(rank_dataHtml);
+        });
+
         $(function () {
             var rank_count = $('.rank-list li').length;
             var rank_height = $('.rank-list li').height();
@@ -67,6 +81,21 @@
             news_scroll(1);
         });
 
+        
+        // 실시간 검색어 드롭다운
+        $(function(){
+            var rank_dropdown_dataHtml = '<div>';
+
+            for(var i = 0; i < rank_data.length; i++){
+                rank_dropdown_dataHtml += '<li><a href="#">' + (i+1) + '&nbsp;' + rank_data[i] + '</a></li>';
+            }
+
+            rank_dropdown_dataHtml += '</div>';
+
+            $("#rank-dropdown-content").html(rank_dropdown_dataHtml);
+        });
+
+        // 정보
         $(function () {
             let info_container = $('#info-pagination');
             info_container.pagination({
@@ -93,6 +122,8 @@
             })
         });
 
+        // 트렌드 쇼핑
+        // 상품
         $(function () {
             let shopping_container = $('#shopping-pagination');
             shopping_container.pagination({
@@ -123,6 +154,7 @@
             })
         });
 
+        // 쇼핑몰
         $(function () {
             let shopping_Mall_container = $('#shopping-Mall-pagination');
             shopping_Mall_container.pagination({
@@ -150,6 +182,7 @@
             })
         });
 
+        // MEN
         $(function () {
             let shopping_Men_container = $('#shopping-Men-pagination');
             shopping_Men_container.pagination({
@@ -177,25 +210,20 @@
                 }
             })
         });
-    
-        // 바닐라 js
-
-        // 언론사 마우스 이벤트
-        var press;
-
-        function mouseOverEvent(obj){
-            press = obj.innerHTML;
-            obj.style.backgroundColor = "#f7f9fa";
-            obj.innerHTML = '<tr><button>구독</button>&nbsp;<button>기사보기</button></tr>';
-        };
-
-        function mouseOutEvent(obj){
-            obj.style.backgroundColor = "White";
-            obj.style.color = "Black";
-            obj.innerHTML = press;
-        };
 
         // 오늘 읽을만한 글
+        // 첫 페이지
+        $(function(){
+            var written_dataHtml;
+
+            written_dataHtml = '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '연애의자격' + '</p>' + '<p class="written-data-sub">' + '연애결혼' + '</p></div>';
+            written_dataHtml += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '리데이트' + '</p>' + '<p class="written-data-sub">' + '재회' + '</p></div>';
+            written_dataHtml += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '포데이트' + '</p>' + '<p class="written-data-sub">' + '연애시작' + '</p></div>'
+
+            $("#written-data-container").html(written_dataHtml);
+        });
+
+        // 바닐라 js로 항목에 따른 데이터 변경
         window.onload = function () {
             let data = {
                 info1: {
@@ -242,8 +270,10 @@
                 container.innerHTML = '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '연애의자격' + '</p>' + '<p class="written-data-sub">' + '연애결혼' + '</p></div>';
                 container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '리데이트' + '</p>' + '<p class="written-data-sub">' + '재회' + '</p></div>';
                 container.innerHTML += '<div class="written-data-frame"><img class="written-data-img" src=' + 'img/luvd.jpg' + '></img> <p class="written-data-category">' + '회사소개' + '</p> <p class="written-data-title">' + '포데이트' + '</p>' + '<p class="written-data-sub">' + '연애시작' + '</p></div>'
+                current = 1;
             });
 
+            // 이전 페이지
             item[0].onclick = function(){
                 if(current == 1){
                     item[1].onclick();
@@ -254,6 +284,7 @@
                 }
             };
 
+            // 다음 페이지
             item[item.length-1].onclick = function(){
                 if(current == item.length-2){
                     item[1].onclick();
@@ -265,12 +296,28 @@
             };
         };
 
+        // 언론사 마우스 이벤트
+        var press;
+
+        function mouseOverEvent(obj){
+            press = obj.innerHTML;
+            obj.style.backgroundColor = "#f7f9fa";
+            obj.innerHTML = '<tr><button>구독</button>&nbsp;<button>기사보기</button></tr>';
+        };
+
+        function mouseOutEvent(obj){
+            obj.style.backgroundColor = "White";
+            obj.style.color = "Black";
+            obj.innerHTML = press;
+        };
+
     </script>
     <title>NAVER</title>
 </head>
 
 <body>
     <div class="container">
+        <!-- 헤더 -->
         <div class="item">
             <div class="header">
                 <div class="shortcut">
@@ -289,6 +336,8 @@
                         <button class="btn btn-light search-btn"></button>
                     </div>
                 </div>
+
+                <!-- 메뉴바 -->
                 <div class="menu-bar">
                     <div class="menu-navbar">
                         <nav class="navbar navbar-expand-lg navbar-light">
@@ -435,22 +484,13 @@
                             </div>
                         </nav>
                     </div>
+
+                    <!-- 실시간 검색어 -->
                     <div class="rank">
                         <dl class="rank-list">
-                            <dt>실시간 급상승 검색어</dt>
+                            <dt>실시간 검색어</dt>
                             <dd>
-                                <ol class="rank-list-content">
-                                    <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%9C%A0%EC%9E%AC%EC%84%9D">1 유재석</a></li>
-                                    <li><a href="#">2 순위</a></li>
-                                    <li><a href="#">3 순위</a></li>
-                                    <li><a href="#">4 순위</a></li>
-                                    <li><a href="#">5 순위</a></li>
-                                    <li><a href="#">6 순위</a></li>
-                                    <li><a href="#">7 순위</a></li>
-                                    <li><a href="#">8 순위</a></li>
-                                    <li><a href="#">9 순위</a></li>
-                                    <li><a href="#">10 순위</a></li>
-                                </ol>
+                                <ol class="rank-list-content"></ol>
                             </dd>
                         </dl>
                     </div>
@@ -460,16 +500,6 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu" id="rank-dropdown-content" aria-labelledby="nav-rank-dropdown">
-                                <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%9C%A0%EC%9E%AC%EC%84%9D">1 유재석</a>
-                                <a href="#">2 순위</a>
-                                <a href="#">3 순위</a>
-                                <a href="#">4 순위</a>
-                                <a href="#">5 순위</a>
-                                <a href="#">6 순위</a>
-                                <a href="#">7 순위</a>
-                                <a href="#">8 순위</a>
-                                <a href="#">9 순위</a>
-                                <a href="#">10 순위</a>
                             </div>
                         </li>
                     </div>
@@ -479,10 +509,14 @@
 
         </div>
 
+        <!-- 메인 left -->
         <div class="item">
+            <!-- 광고 -->
             <div class="main-left-ad">
                 <img class="main-left-ad-img" src="img/luvd.jpg">
             </div>
+
+            <!-- 뉴스 -->
             <div class="news">
                 <dl class="news-list">
                     <dt>뉴스</dt>
@@ -508,6 +542,8 @@
                     <a href="https://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101">경제</a>
                 </dl>
             </div>
+
+            <!-- 언론사 -->
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -575,28 +611,28 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>법률신문</td>
-                                    <td>한겨례</td>
-                                    <td>뉴스타파</td>
-                                    <td>OSEN</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">법률신문</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">한겨례</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">뉴스타파</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">OSEN</td>
                                 </tr>
                                 <tr>
-                                    <td>뉴스핌</td>
-                                    <td>디자인정글</td>
-                                    <td>매일노동뉴스</td>
-                                    <td>비즈한국</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">뉴스핌</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">디자인정글</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">매일노동뉴스</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">비즈한국</td>
                                 </tr>
                                 <tr>
-                                    <td>JTBC</td>
-                                    <td>KBS</td>
-                                    <td>노컷뉴스</td>
-                                    <td>시사저널</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">JTBC</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">KBS</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">노컷뉴스</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">시사저널</td>
                                 </tr>
                                 <tr>
-                                    <td>동아일보</td>
-                                    <td>국방일보</td>
-                                    <td>The Korea Times</td>
-                                    <td>시사IN</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">동아일보</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">국방일보</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">The Korea Times</td>
+                                    <td onMouseOver="mouseOverEvent(this)" onMouseOut="mouseOutEvent(this)">시사IN</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -612,6 +648,8 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
+            <!-- 오늘 읽을만한 글 -->
             <div class="today-written">
                 <p><strong>오늘 읽을만한 글</strong> <span class="today-written-title">주제별로 분류된 다양한 글 모음</span></p>
                 <nav aria-label="Page navigation example">
@@ -629,29 +667,12 @@
                     </ul>
                 </nav>
             </div>
-            <div id="written-data-container">
-                <div class="written-data-frame">
-                    <img class="written-data-img" src="img/luvd.jpg"></img>
-                    <p class="written-data-category">회사소개</p>
-                    <p class="written-data-title">연애의자격</p>
-                    <p class="written-data-sub">연애</p>
-                </div>
-                <div class="written-data-frame">
-                    <img class="written-data-img" src="img/luvd.jpg"></img>
-                    <p class="written-data-category">회사소개</p>
-                    <p class="written-data-title">리데이트</p>
-                    <p class="written-data-sub">재회</p>
-                </div>
-                <div class="written-data-frame">
-                    <img class="written-data-img" src="img/luvd.jpg"></img>
-                    <p class="written-data-category">회사소개</p>
-                    <p class="written-data-title">포데이트</p>
-                    <p class="written-data-sub">연애시작</p>
-                </div>
-            </div>
+            <div id="written-data-container"></div>
         </div>
 
+        <!-- 메인 right -->
         <div class="item">
+            <!-- 로그인 -->
             <div class="login-form">
                 <p>네이버를 더 안전하고 편리하게 이용하세요</p>
                 <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"><button
@@ -661,13 +682,19 @@
                     <a href="https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=ko_KR&cpno=" class="sign-up">회원가입</a>
                 </p>
             </div>
+
+            <!-- 정보 -->
             <div class="info">
                 <div id="info-data-container"></div>
                 <div id="info-pagination"></div>
             </div>
+
+            <!-- 광고 -->
             <div class="main-right-ad">
                 <img class="main-right-ad-img" src="img/luvd.jpg">
             </div>
+
+            <!-- 트렌드쇼핑 -->
             <div class="shopping">
                 <a href="https://trenditem.shopping.naver.com/trendprod?catId=00000000&freeDelivery=&order=prodRank%2CASC&randomSeed=48&searchKeyword="
                     class="trend"><strong>트렌드쇼핑</strong></a>
@@ -722,6 +749,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 풋터 -->
         <div class="item">
             <div class="footer-ad">
                 <div class="footer-ad-frame">
