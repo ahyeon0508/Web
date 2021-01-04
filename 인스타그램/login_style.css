@@ -20,7 +20,7 @@ body{
 
 .wrap {
     display: grid;
-    margin: 150px auto 0 auto;
+    margin: 120px auto 0 auto;
     row-gap: 8em;
 }
 
@@ -101,7 +101,7 @@ body{
     width: 30%;
 }
 
-.dif-login{
+.dif-login a{
     color: #385185;
 }
 
@@ -145,4 +145,23 @@ body{
     display: grid;
     font-size: 12px;
     margin: auto;
+}
+
+.info-bottom{
+    margin-left: 80px;
+}
+
+.setting{
+    margin: 20px 0 55px 170px;
+}
+
+.setting select{
+    border: 0;
+    outline: 0;
+    background-color: #fafafa;
+    color: gray;
+}
+
+.setting span, .info span{
+    color: gray;
 }
