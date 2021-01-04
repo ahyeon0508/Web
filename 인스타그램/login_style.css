@@ -1,0 +1,148 @@
+a:link,
+a:visited,
+a:hover {
+    color: #a09f9f;
+    text-decoration: none;
+}
+
+button{
+    border: 0;
+    outline: 0;
+}
+
+p{
+    text-align: center;
+}
+
+body{
+    background-color: #fafafa;
+}
+
+.wrap {
+    display: grid;
+    margin: 150px auto 0 auto;
+    row-gap: 8em;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 300px 350px;
+    column-gap: 2em;
+    margin: auto;
+}
+
+.instagram-img{
+    width: 300px;
+    height: 500px;
+    margin: auto;
+}
+
+.login-img{
+    width: 200px;
+    height: 50px;
+    place-self: center;
+}
+
+.login-form{
+    border: 1px solid #dbdbdb;
+    height: 350px;
+    display: grid;
+    grid-template-rows: 80px 90px 60px 120px;
+    background-color: white;
+}
+
+.login-input{
+    margin: 10px auto auto 50px;
+}
+
+.login-form input{
+    margin: 5px 5px 5px -10px;
+    width: 270px;
+    font-size: 12px;
+    padding: 7px;
+    border: 1px solid #dbdbdb;
+    background-color: #fafafa;
+}
+
+.login-form button{
+    background-color: #0095f6;
+    width: 270px;
+    padding: 5px;
+    color: white;
+    margin: 12px 40px 10px 40px;
+}
+
+.line{
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
+
+.line:after{
+    display: inline-block;
+    margin: 0 0 3px 20px;
+    height: 1px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999999;
+    width: 30%;
+}
+
+.line:before{
+    display: inline-block;
+    margin: 0 20px 3px 0;
+    height: 1px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999999;
+    width: 30%;
+}
+
+.dif-login{
+    color: #385185;
+}
+
+.pw{
+    font-size: 12px;
+}
+
+.sign-up{
+    border: 1px solid #dbdbdb;
+    height: 50px;
+    margin: 10px 0 15px 0;
+    padding-top: 13px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.sign-up .short-cut{
+    color: #0095f6;
+}
+
+.download{
+    font-size: 14px;
+    height: 100px;
+    margin-left: 50px;
+    grid-template-columns: 120px 120px;
+    column-gap: 0.5em;
+    display: grid;
+}
+
+.download-alarm{
+    grid-column: 1/3;
+}
+
+.app-store, .google-play{
+    margin-top: -20px;
+    width: 120px;
+}
+
+.footer {
+    grid-column: 1;
+    display: grid;
+    font-size: 12px;
+    margin: auto;
+}
