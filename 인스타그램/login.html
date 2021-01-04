@@ -4,22 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 부트스트랩 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
         crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
 
     <!-- css & jquery -->
     <link rel="stylesheet" href="./login_style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>login</title>
 </head>
@@ -37,30 +43,54 @@
                 <div class="login-form">
                     <img src="img/logo.png" class="login-img">
                     <div class="login-input">
-                        <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일"></input>
-                        <input type="password" placeholder="비밀번호"></input>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput" class="bmd-label-floating">전화번호, 사용자 이름 또는 이메일</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput">
+                        </div>
+                        <div class="form-group bmd-form-group">
+                            <label for="exampleInputPassword1" class="bmd-label-floating">비밀번호</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
                     </div>
                     <button>로그인</button>
                     <div class="dif-login">
                         <p class="line">또는</p>
-                        <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%2522oa4zi81nibfov1oqywfp13cnpz7yofskdn4sd62v73joga3a8ws%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Dko_KR%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dd93955ee-65c4-44bf-9b70-0bee954704eb%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%2522oa4zi81nibfov1oqywfp13cnpz7yofskdn4sd62v73joga3a8ws%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%23_%3D_&display=page&locale=ko_KR&pl_dbl=0"><p class="facebook"><strong>Facebook으로 로그인</strong></p></a>
-                        <a href="https://www.instagram.com/accounts/password/reset/"><p class="pw">비밀번호를 잊으셨나요?</p></a>
+                        <a
+                            href="https://www.facebook.com/login.php?skip_api_login=1&api_key=124024574287414&kid_directed_site=0&app_id=124024574287414&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D124024574287414%26redirect_uri%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fsignup%252F%26state%3D%257B%2522fbLoginKey%2522%253A%2522oa4zi81nibfov1oqywfp13cnpz7yofskdn4sd62v73joga3a8ws%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%26scope%3Demail%26response_type%3Dcode%252Cgranted_scopes%26locale%3Dko_KR%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dd93955ee-65c4-44bf-9b70-0bee954704eb%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fsignup%2F%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D%257B%2522fbLoginKey%2522%253A%2522oa4zi81nibfov1oqywfp13cnpz7yofskdn4sd62v73joga3a8ws%2522%252C%2522fbLoginReturnURL%2522%253A%2522%252F%2522%257D%23_%3D_&display=page&locale=ko_KR&pl_dbl=0">
+                            <p class="facebook"><strong>Facebook으로 로그인</strong></p>
+                        </a>
+                        <a href="https://www.instagram.com/accounts/password/reset/">
+                            <p class="pw">비밀번호를 잊으셨나요?</p>
+                        </a>
                     </div>
                 </div>
                 <div class="sign-up">
-                    <p>계정이 없으신가요? <a href="https://www.instagram.com/accounts/emailsignup/"><span class="short-cut"><strong>가입하기</strong></span></a></p>
+                    <p>계정이 없으신가요? <a href="https://www.instagram.com/accounts/emailsignup/"><span
+                                class="short-cut"><strong>가입하기</strong></span></a></p>
                 </div>
                 <div class="download">
                     <p class="download-alarm">앱을 다운로드하세요.</p>
-                    <a href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"><img src="img/ios.png" class="app-store"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D4B3ABA9B-A778-4222-9720-2DA5D93C6D00%26utm_content%3Dlo%26utm_medium%3Dbadge"><img src="img/android.png" class="google-play"></a>
+                    <a
+                        href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"><img
+                            src="img/ios.png" class="app-store"></a>
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D4B3ABA9B-A778-4222-9720-2DA5D93C6D00%26utm_content%3Dlo%26utm_medium%3Dbadge"><img
+                            src="img/android.png" class="google-play"></a>
                 </div>
             </div>
         </div>
         <!-- footer -->
         <div class="footer">
             <div class="info">
-
+                <div class="info-top">
+                    <span>소개 &nbsp;&nbsp;</span><span>블로그 &nbsp;&nbsp;</span><span>채용 정보 &nbsp;&nbsp;</span><span>도움말 &nbsp;&nbsp;</span>
+                    <span>API &nbsp;&nbsp;</span><span>개인정보처리방침 &nbsp;&nbsp;</span><span>약관 &nbsp;&nbsp;</span><span>인기계정 &nbsp;&nbsp;</span>
+                    <span>해시태그 &nbsp;&nbsp;</span><span>위치 &nbsp;&nbsp;</span><span>약관 &nbsp;&nbsp;</span><br>
+                </div>
+                <div class="info-bottom">
+                    <span>뷰티 &nbsp;&nbsp;</span><span>댄스 및 공연 &nbsp;&nbsp;</span><span>피트니스 &nbsp;&nbsp;</span><span>식음료 &nbsp;&nbsp;</span>
+                    <span>집 및 정원 &nbsp;&nbsp;</span><span>음악 &nbsp;&nbsp;</span><span>시각 예술 &nbsp;&nbsp;</span>
+                </div>
             </div>
             <div class="setting">
                 <select>
