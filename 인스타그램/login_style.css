@@ -1,3 +1,65 @@
+/* 반응형 */
+@media (max-width: 873px) {
+    .container{
+        margin: 120px auto 0 auto;
+    }
+
+    .login-left{
+        display: none;
+    }
+
+    .login-right{
+        width: 350px;
+        margin: auto;
+    }
+
+    body{
+        background-color: #fafafa;
+    }
+
+    .footer{
+        font-size: 10px;
+        margin-top: 140px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 874px) {
+    body{
+        background-color: #fafafa;
+    }
+
+    .container {
+        display: grid;
+        margin: 120px auto 0 auto;
+        row-gap: 8em;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 300px 350px;
+        column-gap: 2em;
+        margin: auto;
+    }
+
+    .instagram-img {
+        width: 300px;
+        height: 500px;
+        margin: auto;
+    }
+
+    .footer {
+        grid-column: 1;
+        display: grid;
+        font-size: 12px;
+        margin: auto;
+    }
+
+    .info-bottom{
+        margin-left: 80px;
+    }
+}
+  
 a:link,
 a:visited,
 a:hover {
@@ -12,29 +74,6 @@ button{
 
 p{
     text-align: center;
-}
-
-body{
-    background-color: #fafafa;
-}
-
-.wrap {
-    display: grid;
-    margin: 120px auto 0 auto;
-    row-gap: 8em;
-}
-
-.main {
-    display: grid;
-    grid-template-columns: 300px 350px;
-    column-gap: 2em;
-    margin: auto;
-}
-
-.instagram-img{
-    width: 300px;
-    height: 500px;
-    margin: auto;
 }
 
 .login-img{
@@ -135,19 +174,9 @@ body{
     width: 120px;
 }
 
-.footer {
-    grid-column: 1;
-    display: grid;
-    font-size: 12px;
-    margin: auto;
-}
-
-.info-bottom{
-    margin-left: 80px;
-}
-
 .setting{
-    margin: 20px 0 55px 170px;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .setting select{
