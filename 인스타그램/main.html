@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+
+    <!-- css & jquery -->
+    <link rel="stylesheet" href="./main_style.css">
+
+    <title>Instagram</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <div class="logo-search">
+                <img src="img/logo.png" class="logo">
+                <input type="text" placeholder="검색">
+            </div>
+            <div class="shortcut">
+                <img src="img/home.PNG" class="home">
+                <img src="img/DM.PNG" class="DM">
+                <img src="img/탐험.PNG" class="explore">
+                <img src="img/하트.PNG" class="heart">
+                <img src="img/계정.PNG" class="accountImg">
+            </div>
+        </div>
+        <div class="main">
+            <!-- left main(content) -->
+            <div class="content">
+                <div class="story">
+                </div>
+                <div class="feed">
+                    <div class="author">
+                        <img src="img/계정.PNG" class="author-img">
+                        <span><strong>작성자</strong></span>
+                    </div>
+                    <div class="img">
+                        <img src="img/수목원.PNG" class="feed-img">
+                    </div>
+                    <div class="comment">
+                        <div class="func">
+                            <img src="img/하트.PNG" class="func-heart">
+                            <img src="img/댓글.PNG" class="func-comment">
+                            <img src="img/탐험.PNG" class="func-explore">
+                            <img src="img/책갈피.PNG" class="func-mark">
+                        </div>
+                        <div class="like-info">
+                            <p><strong>arongeee_</strong>님이 좋아합니다</p>
+                            <span class="time">2시간 전</span>
+                        </div>
+                        <div class="comment">
+                            <input type="text"><button>게시</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right main(account) -->
+            <div class="account">
+                <div class="myAccount">
+                    <img src="img/계정.PNG" class="myAccount-img">
+                    <p>arongeee_</p>
+                    <p>이아현</p>
+                    <a>전환</a>
+                </div>
+                <div class="recommendAccount">
+                    <span class="recommend">회원님을 위한 추천</span><span><strong>모두 보기</strong></span>
+                    <img src="img/계정.PNG" class="recommend-img">
+                    <p>arong</p>
+                    <p>arongeee_님이 팔로우합니다</p>
+                    <a>팔로우</a>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="footer">
+                <div class="info">
+                    <div class="info-top">
+                        <span>소개 &nbsp;&nbsp;</span><span>도움말 &nbsp;&nbsp;</span><span>홍보 센터 &nbsp;&nbsp;</span><span>API &nbsp;&nbsp;</span>
+                        <span>채용 정보 &nbsp;&nbsp;</span><br>
+                    </div>
+                    <div class="info-bottom">
+                        <span>개인정보처리방침 &nbsp;&nbsp;</span><span>약관 &nbsp;&nbsp;</span><span>위치 &nbsp;&nbsp;</span>
+                        <span>인기 계정 &nbsp;&nbsp;</span><span>해시태그 &nbsp;&nbsp;</span><span>언어 &nbsp;&nbsp;</span><br>
+                    </div>
+                </div>
+                <div class="developer">
+                    <span>
+                        © 2021 ahyeon
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
