@@ -62,7 +62,7 @@
     
 }
 
-@media (min-width: 700px) and (max-width: 999px) {
+@media (min-width: 700px) and (max-width: 1199px) {
     /* 헤더 */
     .header{
         height: 70px;
@@ -125,7 +125,7 @@
     }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1200px){
     /* 헤더 */
     .header{
         height: 70px;
@@ -206,7 +206,7 @@
 
     .myAccount{
         display: grid;
-        grid-template-columns: 60px 250px auto;
+        grid-template-columns: 60px 200px auto;
         column-gap: 1em;
         align-self: center;
     }
@@ -241,7 +241,7 @@
 
     .recommendAccount{
         display: grid;
-        grid-template-columns: 50px 250px auto;
+        grid-template-columns: 50px 200px auto;
         column-gap: 1em;
         align-self: center;
     }
@@ -271,6 +271,11 @@
 }
 
 
+/* 공통*/
+body{
+    background-color: #fafafa;
+}
+
 /* 헤더 */
 .shortcut{
     align-self: center;
@@ -291,7 +296,6 @@
 /* left-main */
 .content{
     display: grid;
-    grid-template-columns: 1;
     grid-template-rows: 150px auto;
     margin: auto;
 }
@@ -328,12 +332,16 @@
     margin-right: 10px;
 }
 
+#plus{
+    float: right;
+}
+
 /* comment */
 .comment{
     padding: 10px 15px 10px 15px;
 }
 
-.func-heart, .func-comment, .func-explore, .func-mark{
+.func-heart, .func-comment, .func-DM, .func-mark{
     width: 35px;
     height: 35px;
 }
@@ -364,4 +372,5 @@
     color: #0095f6;
     justify-self: end;
     align-self: center;
+    font-size: 12px;
 }
