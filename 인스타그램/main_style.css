@@ -1,21 +1,220 @@
+/* 헤더 */
+.header{
+    height: 70px;
+    background-color: white;
+    display: grid;
+    border-bottom: 1px solid lightgray;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logo{
+    align-self: center;
+    justify-self: center;
+
+}
+
+.search{
+    align-self: center;
+    justify-self: center;
+}
+
+.search-bar{
+    width: 200px;
+    background-color: #160c0c;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.shortcut{
+    align-self: center;
+    justify-self: center;
+}
+
+.logo-img{
+    width: 110px;
+    height: 50px;
+}
+
+.home, .DM, .explore, .heart, .accountImg{
+    width: 40px;
+    height: 40px;
+}
+
+/* main */
 .container{
     display: grid;
 }
 
-.header{
-    background-color: white;
+
+.main{
     display: grid;
-    grid-template-columns: 1/3;
-    border-bottom: 1px solid lightgray;
+    grid-template-columns: 1.5fr 0.9fr;
 }
 
+/* left-main */
 .content{
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 250px auto;
+    grid-template-rows: 100px auto;
 }
 
-.account{
+/* 스토리 */
+.story-template{
+    background-color: white;
+    width: 650px;
+    height: 110px;
+    margin-top: 25px;
+    border: 1px solid lightgray;
+}
+
+.story{
+    margin: 15px;
+}
+
+.story-img, .myAccount-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+}
+
+.story-author{
+    font-size: 12px;
+    color:gray;
+}
+
+/* feed */
+.feed{
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 650px;
     display: grid;
-    grid-template-columns: 2;
+    grid-template-rows: 60px 600px 200px;
+    margin: 60px 0 50px 0;
+}
+
+/* feed-author */
+.feed-author{
+    align-self: center;
+    padding-left: 20px;
+}
+
+.author-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    margin-right: 10px;
+}
+
+/* feed-img */
+.feed-img{
+    width: 648px;
+    height: 600px;
+}
+
+/* comment */
+.comment{
+    padding: 10px 15px 10px 15px;
+}
+
+.func-heart, .func-comment, .func-explore, .func-mark{
+    width: 35px;
+    height: 35px;
+}
+
+.func-mark{
+    float: right;
+}
+
+.time{
+    color: gray;
+    font-size: 8px;
+}
+
+.comment-input{
+    border: 0;
+    width: 550px;
+}
+
+/* right-main */
+.right-main{
+    display: grid;
+    grid-template-rows: auto;
+}
+
+/* 계정 */
+.account{
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 80px 50px 100px;
+}
+
+.myAccount{
+    display: grid;
+    grid-template-columns: 60px 250px auto;
+    column-gap: 1em;
+    align-self: center;
+}
+
+.nickname{
+    margin-top: 5px;
+}
+
+.name{
+    margin-top: -20px;
+    color: gray;
+    font-size: 14px;
+}
+
+.transfer{
+    align-self: center;
+    justify-self: end;
+}
+
+.btn{
+    color: #0095f6;
+}
+
+/* 회원님을 위한 추천 */
+.recommend{
+    margin-top: 30px;
+}
+
+.msg{
+    color: gray;
+}
+
+.total-look{
+    float: right;
+}
+
+.recommendAccount{
+    display: grid;
+    grid-template-columns: 50px 250px auto;
+    column-gap: 1em;
+    align-self: center;
+}
+
+.recommend-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    margin-top: 5px;
+    justify-self: center;
+}
+
+.follow{
+    justify-self: end;
+}
+
+/* 인스타그램 정보 */
+.info{
+    color: lightgray;
+    font-size: 12px;
+}
+
+.developer{
+    margin-top: 20px;
 }

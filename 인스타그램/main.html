@@ -32,28 +32,35 @@
 </head>
 
 <body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png" class="logo-img">
+        </div>
+        <div class="search">
+            <input type="text" placeholder="검색" class="search-bar">
+        </div>
+        <div class="shortcut">
+            <img src="img/home.PNG" class="home">
+            <img src="img/DM.PNG" class="DM">
+            <img src="img/탐험.PNG" class="explore">
+            <img src="img/하트.PNG" class="heart">
+            <img src="img/계정.PNG" class="accountImg">
+        </div>
+    </div>
     <div class="container">
         <!-- 헤더 -->
-        <div class="header">
-            <div class="logo-search">
-                <img src="img/logo.png" class="logo">
-                <input type="text" placeholder="검색">
-            </div>
-            <div class="shortcut">
-                <img src="img/home.PNG" class="home">
-                <img src="img/DM.PNG" class="DM">
-                <img src="img/탐험.PNG" class="explore">
-                <img src="img/하트.PNG" class="heart">
-                <img src="img/계정.PNG" class="accountImg">
-            </div>
-        </div>
+
         <div class="main">
             <!-- left main(content) -->
             <div class="content">
-                <div class="story">
+                <div class="story-template">
+                    <div class="story">
+                        <img src="img/계정.PNG" class="story-img">
+                        <p class="story-author">arongeee_</p>
+                    </div>
                 </div>
                 <div class="feed">
-                    <div class="author">
+                    <div class="feed-author">
                         <img src="img/계정.PNG" class="author-img">
                         <span><strong>작성자</strong></span>
                     </div>
@@ -71,46 +78,65 @@
                             <p><strong>arongeee_</strong>님이 좋아합니다</p>
                             <span class="time">2시간 전</span>
                         </div>
-                        <div class="comment">
-                            <input type="text"><button>게시</button>
+                        <hr>
+                        <div class="comment-template">
+                            <input type="text" placeholder="댓글 달기..." class="comment-input">
+                            <button type="button" class="btn btn-link" id="account-transfer"
+                                data-mdb-ripple-color="dark"><strong>게시</strong></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- right main(account) -->
-            <div class="account">
-                <div class="myAccount">
-                    <img src="img/계정.PNG" class="myAccount-img">
-                    <p>arongeee_</p>
-                    <p>이아현</p>
-                    <a>전환</a>
-                </div>
-                <div class="recommendAccount">
-                    <span class="recommend">회원님을 위한 추천</span><span><strong>모두 보기</strong></span>
-                    <img src="img/계정.PNG" class="recommend-img">
-                    <p>arong</p>
-                    <p>arongeee_님이 팔로우합니다</p>
-                    <a>팔로우</a>
-                </div>
-            </div>
-            <!-- footer -->
-            <div class="footer">
-                <div class="info">
-                    <div class="info-top">
-                        <span>소개 &nbsp;&nbsp;</span><span>도움말 &nbsp;&nbsp;</span><span>홍보 센터 &nbsp;&nbsp;</span><span>API &nbsp;&nbsp;</span>
-                        <span>채용 정보 &nbsp;&nbsp;</span><br>
+            <!-- right main -->
+            <div class="right-main">
+                <!-- account -->
+                <div class="account">
+                    <div class="myAccount">
+                        <img src="img/계정.PNG" class="myAccount-img">
+                        <div class="myAccount-info">
+                            <p class="nickname"><strong>arongeee_</strong></p>
+                            <p class="name">이아현</p>
+                        </div>
+                        <div class="transfer">
+                            <button type="button" class="btn btn-link"
+                                data-mdb-ripple-color="dark"><strong>전환</strong></button>
+                        </div>
                     </div>
-                    <div class="info-bottom">
-                        <span>개인정보처리방침 &nbsp;&nbsp;</span><span>약관 &nbsp;&nbsp;</span><span>위치 &nbsp;&nbsp;</span>
-                        <span>인기 계정 &nbsp;&nbsp;</span><span>해시태그 &nbsp;&nbsp;</span><span>언어 &nbsp;&nbsp;</span><br>
+                    <p class="recommend"><span class="msg"><strong>회원님을 위한 추천</strong></span><span
+                            class="total-look"><strong>모두 보기</strong></span></p>
+                    <div class="recommendAccount">
+                        <img src="img/계정.PNG" class="recommend-img">
+                        <div class="recommend-info">
+                            <p class="nickname"><strong>arong</strong></p>
+                            <p class="name">arongeee_님이 팔로우합니다</p>
+                        </div>
+                        <div class="follow">
+                            <button type="button" class="btn btn-link"
+                                data-mdb-ripple-color="dark"><strong>팔로우</strong></button>
+                        </div>
                     </div>
+                    <div class="info">
+                        <div class="info-top">
+                            <span>소개 &nbsp;&nbsp;</span><span>도움말 &nbsp;&nbsp;</span><span>홍보 센터
+                                &nbsp;&nbsp;</span><span>API &nbsp;&nbsp;</span>
+                            <span>채용 정보 &nbsp;&nbsp;</span><br>
+                        </div>
+                        <div class="info-bottom">
+                            <span>개인정보처리방침 &nbsp;&nbsp;</span><span>약관 &nbsp;&nbsp;</span><span>위치 &nbsp;&nbsp;</span>
+                            <span>인기 계정 &nbsp;&nbsp;</span><span>해시태그 &nbsp;&nbsp;</span><span>언어
+                                &nbsp;&nbsp;</span><br>
+                        </div>
+                        <div class="developer">
+                            <span>
+                                © 2021 ahyeon
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="developer">
-                    <span>
-                        © 2021 ahyeon
-                    </span>
-                </div>
+
             </div>
+
         </div>
     </div>
 
