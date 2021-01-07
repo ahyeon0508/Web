@@ -1,30 +1,277 @@
+/* 반응형 */
+@media (min-width: 576px) and (max-width: 699px){
+    /* 헤더 */
+    .header{
+        height: 70px;
+        background-color: white;
+        display: grid;
+        border-bottom: 1px solid lightgray;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo{
+        align-self: center;
+        margin-left: 20px;
+    }
+
+    .search{
+        display: none;
+    }
+
+    .search-bar{
+        display: none;
+    }
+
+    .shortcut{
+        grid-template-columns: 2;
+    }
+
+    /* left-main */
+    /* 스토리 */
+    .story-template{
+        background-color: white;
+        width: 500px;
+        height: 110px;
+        border: 1px solid lightgray;
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* 피드 */
+    .feed{
+        background-color: white;
+        border: 1px solid lightgray;
+        width: 500px;
+        display: grid;
+        grid-template-rows: 60px 600px 200px;
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 50px;
+    }
+
+    /* feed-img */
+    .feed-img{
+        width: 498px;
+        height: 600px;
+    }
+
+    /* right-main */
+    .right-main{
+        display: none;
+    }    
+    
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+    /* 헤더 */
+    .header{
+        height: 70px;
+        background-color: white;
+        display: grid;
+        border-bottom: 1px solid lightgray;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .search{
+        align-self: center;
+        justify-self: center;
+    }
+
+    .search-bar{
+        width: 200px;
+        background-color: #fafafa;
+        border: 1px solid lightgray;
+        text-align: center;
+    }
+
+    .logo{
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* left-main */
+
+    /* 스토리 */
+    .story-template{
+        background-color: white;
+        width: 650px;
+        height: 110px;
+        border: 1px solid lightgray;
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* 피드 */
+    .feed{
+        background-color: white;
+        border: 1px solid lightgray;
+        width: 650px;
+        display: grid;
+        grid-template-rows: 60px 600px 200px;
+        margin-bottom: 50px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* feed-img */
+    .feed-img{
+        width: 648px;
+        height: 600px;
+    }
+
+    /* right-main */
+    .right-main{
+        display: none;
+    }
+}
+
+@media (min-width: 1000px){
+    /* 헤더 */
+    .header{
+        height: 70px;
+        background-color: white;
+        display: grid;
+        border-bottom: 1px solid lightgray;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .search{
+        align-self: center;
+        justify-self: center;
+    }
+
+    .search-bar{
+        width: 200px;
+        background-color: #fafafa;
+        border: 1px solid lightgray;
+        text-align: center;
+    }
+
+    .logo{
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* main */
+    .container{
+        display: grid;
+    }
+    
+    .main{
+        display: grid;
+        grid-template-columns: 1.5fr 0.9fr;
+        column-gap: 1.5em;
+    }
+
+    /* 스토리 */
+    .story-template{
+        background-color: white;
+        width: 650px;
+        height: 110px;
+        border: 1px solid lightgray;
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* 피드 */
+    .feed{
+        background-color: white;
+        border: 1px solid lightgray;
+        width: 650px;
+        display: grid;
+        grid-template-rows: 60px 600px 200px;
+        margin-bottom: 50px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    /* feed-img */
+    .feed-img{
+        width: 648px;
+        height: 600px;
+    }
+
+    /* right-main */
+    .right-main{
+        display: grid;
+        grid-template-rows: auto;
+    }
+
+    /* 계정 */
+    .account{
+        margin-top: 20px;
+        display: grid;
+        grid-template-rows: 80px 50px 100px;
+    }
+
+    .myAccount{
+        display: grid;
+        grid-template-columns: 60px 250px auto;
+        column-gap: 1em;
+        align-self: center;
+    }
+
+    .nickname{
+        margin-top: 5px;
+    }
+
+    .name{
+        margin-top: -20px;
+        color: gray;
+        font-size: 14px;
+    }
+
+    .transfer{
+        align-self: center;
+        justify-self: end;
+    }
+
+    /* 회원님을 위한 추천 */
+    .recommend{
+        margin-top: 30px;
+    }
+
+    .msg{
+        color: gray;
+    }
+
+    .total-look{
+        float: right;
+    }
+
+    .recommendAccount{
+        display: grid;
+        grid-template-columns: 50px 250px auto;
+        column-gap: 1em;
+        align-self: center;
+    }
+
+    .recommend-img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        border: 1px solid lightgray;
+        margin-top: 5px;
+        justify-self: center;
+    }
+
+    .follow{
+        justify-self: end;
+    }
+
+    /* 인스타그램 정보 */
+    .info{
+        color: lightgray;
+        font-size: 12px;
+    }
+
+    .developer{
+        margin-top: 20px;
+    }
+}
+
+
 /* 헤더 */
-.header{
-    height: 70px;
-    background-color: white;
-    display: grid;
-    border-bottom: 1px solid lightgray;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.logo{
-    align-self: center;
-    justify-self: center;
-
-}
-
-.search{
-    align-self: center;
-    justify-self: center;
-}
-
-.search-bar{
-    width: 200px;
-    background-color: #160c0c;
-    border: 1px solid lightgray;
-    text-align: center;
-}
-
 .shortcut{
     align-self: center;
     justify-self: center;
@@ -41,32 +288,15 @@
 }
 
 /* main */
-.container{
-    display: grid;
-}
-
-
-.main{
-    display: grid;
-    grid-template-columns: 1.5fr 0.9fr;
-}
-
 /* left-main */
 .content{
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 150px auto;
+    margin: auto;
 }
 
 /* 스토리 */
-.story-template{
-    background-color: white;
-    width: 650px;
-    height: 110px;
-    margin-top: 25px;
-    border: 1px solid lightgray;
-}
-
 .story{
     margin: 15px;
 }
@@ -84,15 +314,6 @@
 }
 
 /* feed */
-.feed{
-    background-color: white;
-    border: 1px solid lightgray;
-    width: 650px;
-    display: grid;
-    grid-template-rows: 60px 600px 200px;
-    margin: 60px 0 50px 0;
-}
-
 /* feed-author */
 .feed-author{
     align-self: center;
@@ -105,12 +326,6 @@
     border-radius: 50px;
     border: 1px solid lightgray;
     margin-right: 10px;
-}
-
-/* feed-img */
-.feed-img{
-    width: 648px;
-    height: 600px;
 }
 
 /* comment */
@@ -132,89 +347,21 @@
     font-size: 8px;
 }
 
+.comment-template{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
 .comment-input{
+    align-self: center;
+}
+
+.comment-input input{
     border: 0;
-    width: 550px;
-}
-
-/* right-main */
-.right-main{
-    display: grid;
-    grid-template-rows: auto;
-}
-
-/* 계정 */
-.account{
-    margin-top: 20px;
-    display: grid;
-    grid-template-rows: 80px 50px 100px;
-}
-
-.myAccount{
-    display: grid;
-    grid-template-columns: 60px 250px auto;
-    column-gap: 1em;
-    align-self: center;
-}
-
-.nickname{
-    margin-top: 5px;
-}
-
-.name{
-    margin-top: -20px;
-    color: gray;
-    font-size: 14px;
-}
-
-.transfer{
-    align-self: center;
-    justify-self: end;
 }
 
 .btn{
     color: #0095f6;
-}
-
-/* 회원님을 위한 추천 */
-.recommend{
-    margin-top: 30px;
-}
-
-.msg{
-    color: gray;
-}
-
-.total-look{
-    float: right;
-}
-
-.recommendAccount{
-    display: grid;
-    grid-template-columns: 50px 250px auto;
-    column-gap: 1em;
-    align-self: center;
-}
-
-.recommend-img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    border: 1px solid lightgray;
-    margin-top: 5px;
-    justify-self: center;
-}
-
-.follow{
     justify-self: end;
-}
-
-/* 인스타그램 정보 */
-.info{
-    color: lightgray;
-    font-size: 12px;
-}
-
-.developer{
-    margin-top: 20px;
+    align-self: center;
 }
