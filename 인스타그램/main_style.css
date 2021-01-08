@@ -147,6 +147,13 @@
         text-align: center;
     }
 
+    .auto-img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+
     .logo{
         align-self: center;
         justify-self: center;
@@ -341,9 +348,10 @@ body{
     padding: 10px 15px 10px 15px;
 }
 
-.func-heart, .func-comment, .func-DM, .func-mark{
+.func-comment, .func-DM, .func-mark{
     width: 35px;
     height: 35px;
+    margin-top: -20px;
 }
 
 .func-mark{
