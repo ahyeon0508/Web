@@ -15,11 +15,11 @@
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
 
-    <!-- css & jquery -->
+    <!-- css -->
     <link rel="stylesheet" href="./main_style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- load more -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(window).scroll(function () {
             // .scrollTop()은 선택한 요소의 스크롤바 수직 위치를 반환하거나 스크롤바 수직 위치를 정함.
@@ -30,6 +30,7 @@
         });
 
         function appendData(feedData) {
+            console.log('scroll')
             var data = feedData;
             $('.feedTemplate').append(data);
         }
@@ -53,9 +54,8 @@
         });
     </script>
 
+    <!-- Semantic-UI -->
     <link rel="stylesheet" type="text/css" href="Semantic-UI-master/dist/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="Semantic-UI-master/dist/semantic.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -178,8 +178,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
