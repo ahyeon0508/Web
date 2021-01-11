@@ -33,10 +33,26 @@
             </a>
           </div>
         </md-card-content>
-
-
       </md-card>
-    </form>
+  </form>
+  <div class="sign-up">
+    <md-card>
+      <md-card-content>
+          <p>계정이 없으신가요? <a href="https://www.instagram.com/accounts/emailsignup/"><span
+                      class="short-cut"><strong>가입하기</strong></span></a></p>
+      </md-card-content>
+    </md-card>
+  </div>
+    <div class="download">
+      <p class="download-alarm">앱을 다운로드하세요.</p>
+      <a
+          href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo"><img
+              src="../../img/ios.png" class="app-store"></a>
+      <a
+          href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D4B3ABA9B-A778-4222-9720-2DA5D93C6D00%26utm_content%3Dlo%26utm_medium%3Dbadge"><img
+              src="../../img/android.png" class="google-play"></a>
+  </div>
+
   </div>
   <div class="footer">
     <div class="info">
@@ -82,53 +98,58 @@ export default {
 </script>
 
 <style>
-  .container{
-    margin: 120px auto 0 auto;
-    display: grid;
-    grid-template-columns: 300px 350px;
-    column-gap: 2em;
-    justify-content: center;
-  }
+.container{
+  margin: 80px auto 0 auto;
+  display: grid;
+  grid-template-columns: 300px 350px;
+  column-gap: 2em;
+  justify-content: center;
+}
 
-  .btn-action{
-    margin: -5px 0 10px 0;
-  }
+.btn-action{
+  margin: -5px 0 10px 0;
+}
 
-  .instagram-img{
-    width: 300px;
-  }
+.instagram-img{
+  width: 300px;
+}
 
-  .login-btn{
-    width: 100%;
-  }
+.login-form{
+  display: grid;
+  row-gap: 1em;
+}
 
-  .line{
-    width: 100%;
-    margin: 0 0 20px 0;
-    padding: 0;
-    text-align: center;
-    font-size: 12px;
-    color: gray;
+.login-btn{
+  width: 100%;
+}
+
+.line{
+  width: 100%;
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  color: gray;
 }
 
 .line:after{
-    display: inline-block;
-    margin: 0 0 3px 20px;
-    height: 1px;
-    content: " ";
-    text-shadow: none;
-    background-color: #999999;
-    width: 38%;
+  display: inline-block;
+  margin: 0 0 3px 20px;
+  height: 1px;
+  content: " ";
+  text-shadow: none;
+  background-color: #999999;
+  width: 38%;
 }
 
 .line:before{
-    display: inline-block;
-    margin: 0 20px 3px 0;
-    height: 1px;
-    content: " ";
-    text-shadow: none;
-    background-color: #999999;
-    width: 38%;
+  display: inline-block;
+  margin: 0 20px 3px 0;
+  height: 1px;
+  content: " ";
+  text-shadow: none;
+  background-color: #999999;
+  width: 38%;
 }
 
 .dif-login{
@@ -143,11 +164,45 @@ export default {
     font-size: 11px;
 }
 
+.sign-up{
+  text-align: center;
+}
+
+.sign-up .short-cut{
+  color: #0095f6;
+}
+
+.download{
+  text-align: center;
+  font-size: 14px;
+  height: 100px;
+  margin-left: 50px;
+  grid-template-columns: 120px 120px;
+  column-gap: 0.5em;
+  display: grid;
+}
+
+.download-alarm{
+  grid-column: 1/3;
+}
+
+.app-store, .google-play{
+  margin-top: -20px;
+  width: 120px;
+}
+
 .footer{
-    display: grid;
-    grid-column: 1;
-    font-size: 10px;
-    margin-top: 80px;
-    text-align: center;
+  display: grid;
+  grid-column: 1/3;
+  font-size: 10px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.setting select{
+  border: 0;
+  outline: 0;
+  background-color: #fafafa;
+  color: gray;
 }
 </style>
