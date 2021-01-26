@@ -11,7 +11,7 @@
             <b-col>
               <div class="right-header">
                 <b-row>
-                  <b-col cols="12">
+                  <b-col>
                     <a href="http://www.mohw.go.kr/react/index.jsp">중앙사고수습본부</a>&nbsp;&nbsp;
                     <a href="http://www.kdca.go.kr/index.es?sid=a2">중앙방역대책본부</a>&nbsp;&nbsp;
                     <a href="https://www.facebook.com/koreadca">페</a>&nbsp;&nbsp;
@@ -80,67 +80,131 @@
         </b-container>
       </b-navbar>
     </div>
-    
-    <b-container>
-      <div class="ad">
-        <img class="ad-img" alt="사회적 거리 두기 수도권 2.5단계, 비수도권 2단계 유지">
+  
+    <div id="main">
+      <b-container>
+        <div class="ad">
+          <img class="ad-img" src="http://ncov.mohw.go.kr/upload/ncov/mainbanner/20210116115424_pc.png">
+        </div>
+      </b-container>
+
+      <b-container>
+        <b-row>
+          <b-col cols="5">
+            <div class="left-main">
+              <div class="announce">
+                <span class="content"><strong>환자 현황</strong></span><span class="content-info">(1.26.00시 기준, '20.1.3. 이후 누계)</span>
+                <span class="details">자세히</span>
+              </div>
+
+              <div class="today">
+                <ul>
+                  <b-row>
+                    <b-col>
+                      <li class="totay-confirmed-person">
+                        <strong>일일확진자</strong>
+                      </li>
+                    </b-col>
+                    <b-col>
+                      <li class="korea">
+                        국내발생 <span class="confirmed-person-num"><strong>338</strong></span>
+                      </li>
+                    </b-col>
+                    <b-col cols="4">
+                      <li class="abroad">
+                      해외유입 <span class="confirmed-person-num"><strong>16</strong></span>
+                      </li>
+                    </b-col>
+                  </b-row>
+                </ul>
+              </div>
+              
+              <div class="total">
+                <ul>
+                  <b-row>
+                    <b-col>
+                      <li class="total-confirmed-person">
+                        <strong>확진환자</strong><br><br>
+                        <span>(누적)75,875</span>
+                        <p>전일대비 (+354)</p>
+                      </li>
+                    </b-col>
+                    <b-col>
+                      <li class="release">
+                        <strong>격리해제</strong><br><br>
+                        <span>64,793</span>
+                        <p>(+1837)</p>
+                      </li>
+                    </b-col>
+                    <b-col>
+                      <li class="cure">
+                        <strong>치료 중<br></strong>
+                        <span>(격리 중)</span><br>
+                        <span>9,711</span>
+                        <p>(-1494)</p>
+                      </li>
+                    </b-col>
+                    <b-col cols="2">
+                      <li class="dead">
+                        <strong>사망</strong><br><br>
+                        <span>1,371</span>
+                        <p>(+11)</p>                      
+                      </li>
+                    </b-col>
+                  </b-row>
+                </ul>
+              </div>
+
+              <div class="total-live">
+
+              </div>
+
+              <div class="today-live">
+                <div class="today-live-info"><strong>일별 확진환자 발생 및 완치 추세</strong></div>
+                <canvas id="today-chart" width="400" height="180"></canvas>
+              </div>
+
+              <div class="card-ad">
+                <b-carousel
+                  id="carousel-1"
+                  v-model="slide"
+                  :interval="7000"
+                  controls
+                  indicators
+                  @sliding-start="onSlideStart"
+                  @sliding-end="onSlideEnd"
+                >
+
+                  <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20210122174150.png"></b-carousel-slide>
+                  <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20201021193932.png"></b-carousel-slide>
+                  <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20201015154559.jpg"></b-carousel-slide>
+
+                </b-carousel>
+              </div>
+            </div>
+          </b-col>
+
+          <b-col cols="8">
+            <div class="right-main">
+
+            </div>
+          </b-col>
+
+        </b-row>
+      </b-container>
+    </div>
+  
+    <b-container class="bv-example-row">
+      <div class="footer-ad">
+        <div class="footer-ad-frame">
+          <div class="footer-ad-img-collect">
+            <img class="footer-ad-img" src="http://ncov.mohw.go.kr/upload/ncov/20210115160201.jpg">
+            <img class="footer-ad-img" src="http://ncov.mohw.go.kr/upload/ncov/20201208154751.jpg">
+            <img class="footer-ad-img" src="http://ncov.mohw.go.kr/upload/ncov/20210115160226.jpg">
+          </div>
+        </div>
       </div>
     </b-container>
-
-    <b-container>
-      <b-row>
-        <b-col cols="4">
-          <div class="left-main">
-            <div class="announce">
-              <p><strong>환자 현황</strong>(1.25.00시 기준, '20.1.3. 이후 누계)</p>
-              <p>자세히</p>
-            </div>
-
-            <div class="today">
-              
-            </div>
-
-            <div class="total">
-
-            </div>
-
-            <div class="total-chart">
-
-            </div>
-
-            <div class="today-chart">
-
-            </div>
-
-            <div class="card-ad">
-              <b-carousel
-                id="carousel-1"
-                v-model="slide"
-                :interval="7000"
-                controls
-                indicators
-                @sliding-start="onSlideStart"
-                @sliding-end="onSlideEnd"
-              >
-
-                <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20210122174150.png"></b-carousel-slide>
-                <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20201021193932.png"></b-carousel-slide>
-                <b-carousel-slide img-src="http://ncov.mohw.go.kr/upload/ncov/20201015154559.jpg"></b-carousel-slide>
-
-              </b-carousel>
-            </div>
-          </div>
-        </b-col>
-        <b-col cols="8">
-          <div class="right-main">
-
-          </div>
-        </b-col>
-
-      </b-row>
-      
-    </b-container>
-
 
     <div class="footer">
       <b-container>
@@ -162,24 +226,45 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+import Chart from 'chart.js'
+// eslint-disable-next-line no-unused-vars
+import {totalData, todayData} from './chart-data.js'
+
 export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      totalData: totalData,
+      todayData: todayData,
     }
   },
   methods: {
     // eslint-disable-next-line no-unused-vars
     onSlideStart(slide) {
-      console.log(slide);
       this.sliding = true
     },
     // eslint-disable-next-line no-unused-vars
     onSlideEnd(slide) {
-      console.log(slide);
       this.sliding = false
-    }
+    },
+    // eslint-disable-next-line no-unused-vars
+    createChart(chartID, chartData){
+      console.log(chartID)
+      console.log(chartData)
+      const ctx = document.getElementById(chartID)
+      // eslint-disable-next-line no-unused-vars
+      const myChart = new Chart(ctx,{
+        type: chartData.type,
+        data: chartData.data,
+        options: chartData.options,
+      });
+    },
+    
+  },
+  mounted() {
+      this.createChart('today-chart', this.todayData);
   }
 }
 </script>
@@ -197,12 +282,143 @@ button{
     outline: 0;
 }
 
+ul li{
+  list-style-type: none;
+  float: left;
+  outline: 1px;
+}
+
 .header{
   margin: 20px 0 20px 0;
 }
 
+#main{
+  background-color:#f8f8f8;
+}
+
+/* 메인 광고 */
 .ad-img{
-  border: 1px solid gray;
+  margin: 20px 0 20px 0;
+  border: 1px solid lightgrey;
+  width: 100%;
+  height: 80px;
+}
+
+/* 안내 */
+.announce{
+  margin-bottom: 5px;
+}
+
+.content{
+  color: #174069;
+}
+
+.content-info{
+  font-size: 12px;
+}
+
+.details{
+  margin-left: 140px;
+}
+
+/* 일일 확진자 */
+.today{
+  height: 55px;
+  text-align: center;
+}
+
+.totay-confirmed-person{
+  background-color: lightgrey;
+  width : 150px;
+  height: 50px;
+  padding-top: 12px;
+  margin-left: -40px;
+}
+
+.korea, .abroad{
+  background-color: #288000;
+  width : 155px;
+  height: 50px;
+  color: white;
+  padding-top: 12px;
+  margin-left: -40px;
+}
+
+.confirmed-person-num{
+  color: yellow;
+}
+
+/* 누적 확진자 */
+.total{
+  color: white;
+  text-align: center;
+}
+
+.total-confirmed-person{
+  background-color: #0099ff;
+  width: 155px;
+  padding-top: 12px;
+  margin-left: -40px;
+}
+
+.release{
+  background-color: #006699;
+  width: 100px;
+  padding-top: 12px;
+  margin-left: -40px;
+}
+
+.cure{
+  background-color: #174069;
+  width: 120px;
+  padding-top: 12px;
+  margin-left: -55px;
+}
+
+.dead{
+  background-color: #808080;
+  width: 90px;
+  padding-top: 12px;
+  margin-left: -50px;
+}
+
+/* 검사현황 차트 */
+
+/* 일별 확진환자 발생 및 완치 추세 차트 */
+.today-live{
+  margin-bottom: 10px;
+  background-color: white;
+  border-top: 5px solid #174069;
+}
+
+.today-live-info{
+  background-color: #e6f6ff;
+  text-align: center;
+  color: #174069;
+  padding-bottom: 5px;
+}
+
+.card-ad{
+  margin-bottom: 10px;
+}
+
+.footer-ad{
+  width: 100%;
+  margin: 30px auto;
+}
+
+.footer-ad-frame{
+  background-color: lightgrey;
+}
+
+.footer-ad-img{
+  width: 300px;
+  margin: 15px;
+}
+
+.footer-ad-img-collect{
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .footer{
