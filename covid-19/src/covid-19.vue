@@ -156,7 +156,22 @@
               </div>
 
               <div class="total-live">
-
+                <b-row>
+                  <b-col cols="5">
+                    <div class="test">
+                      <p class="test-content"><strong>검사현황</strong></p>
+                      <p class="total-test">누적검사수<span><strong>5,469,247건</strong></span></p>
+                      <p class="total-test">누적검사완료수<span><strong>5,330,820건</strong></span></p>
+                      <p class="total-test">누적확진율<span><strong>1.4%</strong></span></p>
+                      <p class="total-test-form">(결과양성/총 검사완료수*100%)</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6">
+                    <div class="total-live-info">
+                      <canvas id="total-chart" width="220" height="150"></canvas>
+                    </div>
+                  </b-col>
+                </b-row>
               </div>
 
               <div class="today-live">
@@ -184,9 +199,30 @@
             </div>
           </b-col>
 
-          <b-col cols="8">
+          <b-col cols="7">
             <div class="right-main">
-
+              <b-row>
+                <b-col>
+                    <b-tabs v-model="tabIndex" align="center">
+                      <b-tab title="지역별 거리 두기 단계 01.26.00시 기준" :title-link-class="linkClass(0)">Tab contents 1</b-tab>
+                      <b-tab title="시도별 확진환자 현황 01.27.00시 기준" :title-link-class="linkClass(1)">Tab contents 2</b-tab>
+                    </b-tabs>
+                </b-col>
+              </b-row>
+              <b-row>
+                <b-col cols="6">
+                  <div class="news-issue">
+                    <p class="news-issue-info"><strong>뉴스 & 이슈</strong>&nbsp;&nbsp;
+                    <a href="http://ncov.mohw.go.kr/tcmBoardList.do?brdId=3&brdGubun=" class="news-issue-more">더보기</a></p>
+                  </div>
+                </b-col>
+                <b-col cols="6">
+                  <div class="fact-check">
+                    <p class="fact-check-info"><strong>코로나19 팩트체크</strong>&nbsp;&nbsp;
+                    <a href="http://ncov.mohw.go.kr/factBoardList.do?brdId=3&brdGubun=33" class="news-issue-more">더보기</a></p>
+                  </div>
+                </b-col>
+              </b-row>
             </div>
           </b-col>
 
@@ -238,6 +274,7 @@ export default {
       sliding: null,
       totalData: totalData,
       todayData: todayData,
+      tabIndex: 0
     }
   },
   methods: {
@@ -250,9 +287,7 @@ export default {
       this.sliding = false
     },
     // eslint-disable-next-line no-unused-vars
-    createChart(chartID, chartData){
-      console.log(chartID)
-      console.log(chartData)
+    createTotalChart(chartID, chartData){
       const ctx = document.getElementById(chartID)
       // eslint-disable-next-line no-unused-vars
       const myChart = new Chart(ctx,{
@@ -261,25 +296,38 @@ export default {
         options: chartData.options,
       });
     },
-    
+    createTodayChart(chartID, chartData){
+      const ctx = document.getElementById(chartID)
+      // eslint-disable-next-line no-unused-vars
+      const myChart = new Chart(ctx,{
+        type: chartData.type,
+        data: chartData.data,
+        options: chartData.options,
+      });
+    },
+    linkClass(idx) {
+        if (this.tabIndex === idx) {
+          return ['bg-info', 'text-light']
+        } else {
+          return ['bg-light', 'text-info']
+        }
+      }
   },
   mounted() {
-      this.createChart('today-chart', this.todayData);
+      this.createTodayChart('today-chart', this.todayData);
+      this.createTotalChart('total-chart', this.totalData);
   }
 }
 </script>
 
 <style>
-a:link,
-a:visited,
-a:hover {
-    color: gray;
-    text-decoration: none;
+.right-header a{
+  text-decoration: none;
 }
 
 button{
-    border: 0;
-    outline: 0;
+  border: 0;
+  outline: 0;
 }
 
 ul li{
@@ -304,6 +352,7 @@ ul li{
   height: 80px;
 }
 
+/* left-main */
 /* 안내 */
 .announce{
   margin-bottom: 5px;
@@ -352,6 +401,7 @@ ul li{
 .total{
   color: white;
   text-align: center;
+  margin-bottom: -10px;
 }
 
 .total-confirmed-person{
@@ -383,6 +433,38 @@ ul li{
 }
 
 /* 검사현황 차트 */
+/* 누적검사수 */
+.total-live{
+  margin-bottom: 10px;
+  background-color: white;
+  border-top: 5px solid #174069;
+  height: 155px;
+}
+
+.test{
+  font-size: 12px;
+  background-color: #eafdff;
+  height: 150px;
+}
+
+.test-content{
+  text-align: center;
+  color: #174069;
+}
+
+.total-test{
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.total-test span{
+  color: #174069;
+  float: right;
+}
+
+.total-test-form{
+  font-size: 10px;
+}
 
 /* 일별 확진환자 발생 및 완치 추세 차트 */
 .today-live{
@@ -402,6 +484,54 @@ ul li{
   margin-bottom: 10px;
 }
 
+/* right main */
+/* 지도 */
+
+
+
+/* 뉴스 & 이슈 */
+.news-issue{
+  margin-bottom: 10px;
+  background-color: white;
+  border-top: 5px solid #174069;
+  height: 150px;
+}
+
+.news-issue-info{
+  text-align: center;
+  color:#145663;
+  margin-top: 10px;
+}
+
+.news-issue-more{
+  background-color: #009fd1;
+  border-radius: 12px;
+  color: white;
+  padding: 2px;
+}
+
+/* 코로나 19 팩트체크 */
+.fact-check{
+  margin-bottom: 10px;
+  background-color: white;
+  border-top: 5px solid #174069;
+  height: 150px;
+}
+
+.fact-check-info{
+  text-align: center;
+  color:#585041;
+  margin-top: 10px;
+}
+
+.fact-check-more{
+  background-color: #009fd1;
+  border-radius: 12px;
+  color: white;
+  padding: 2px;
+}
+
+/* footer */
 .footer-ad{
   width: 100%;
   margin: 30px auto;

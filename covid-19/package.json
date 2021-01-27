@@ -11,6 +11,8 @@
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.2",
     "chart.js": "^2.9.4",
+    "chartjs-plugin-datalabels": "^0.7.0",
+    "chartjs-plugin-labels": "^1.1.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1"
