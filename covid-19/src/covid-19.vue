@@ -47,7 +47,6 @@
                   <b-navbar-nav class="ml-auto">
                     <b-nav-form>
                       <b-form-input placeholder="검색어를 입력하세요."></b-form-input>
-                      <!-- <b-button type="submit">Search</b-button> -->
                     </b-nav-form>
                   </b-navbar-nav>
                 </b-collapse>
@@ -168,7 +167,30 @@
                   </b-col>
                   <b-col cols="6">
                     <div class="total-live-info">
-                      <canvas id="total-chart" width="220" height="150"></canvas>
+                      <b-row>
+                        <b-col>
+                          <div class="total-chart-ing">
+                            <p>검사중</p>
+                            <p><strong class="total-chart-num">142,753</strong>명</p>
+                            <p class="total-chart-percent">2.6%</p>
+                          </div>
+                        </b-col>
+                        <b-col>
+                          <div class="total-chart-plus">
+                            <p>결과양성(확진)</p>
+                            <p><strong class="total-chart-num">77,395</strong>명</p>
+                            <p class="total-chart-percent">1.4%</p>
+                          </div>
+                        </b-col>
+                        <b-col>
+                          <div class="total-chart-minus">
+                            <p>결과음성</p>
+                            <p><strong class="total-chart-num">5,349,116</strong>명</p>
+                            <p class="total-chart-percent">96.0%</p>
+                          </div>
+                        </b-col>
+                      </b-row>
+                      <canvas id="total-chart" width="220" height="90"></canvas>
                     </div>
                   </b-col>
                 </b-row>
@@ -204,7 +226,7 @@
               <b-row>
                 <b-col>
                     <b-tabs v-model="tabIndex" align="center">
-                      <b-tab title="지역별 거리 두기 단계 01.26.00시 기준" :title-link-class="linkClass(0)">Tab contents 1</b-tab>
+                      <b-tab title="지역별 거리 두기 단계 01.26.00시 기준" :title-link-class="linkClass(0)"><mapChart></mapChart></b-tab>
                       <b-tab title="시도별 확진환자 현황 01.27.00시 기준" :title-link-class="linkClass(1)">Tab contents 2</b-tab>
                     </b-tabs>
                 </b-col>
@@ -257,15 +279,17 @@
         <span>지역번호+114</span>
       </b-container>
     </div>
-
   </div>
 </template>
 
 <script>
 // eslint-disable-next-line no-unused-vars
-import Chart from 'chart.js'
+import Chart from 'chart.js';
 // eslint-disable-next-line no-unused-vars
-import {totalData, todayData} from './chart-data.js'
+import {totalData, todayData} from './chart-data.js';
+// eslint-disable-next-line no-unused-vars
+import mapChart from "../src/components/map-chart";
+
 
 export default {
   data() {
@@ -276,6 +300,9 @@ export default {
       todayData: todayData,
       tabIndex: 0
     }
+  },
+  components:{
+    mapChart
   },
   methods: {
     // eslint-disable-next-line no-unused-vars
@@ -438,7 +465,7 @@ ul li{
   margin-bottom: 10px;
   background-color: white;
   border-top: 5px solid #174069;
-  height: 155px;
+  height: 165px;
 }
 
 .test{
@@ -464,6 +491,28 @@ ul li{
 
 .total-test-form{
   font-size: 10px;
+}
+
+.total-live-info p{
+  font-size: 10px;
+  margin-bottom: -1px;
+  text-align: center;
+}
+
+.total-chart-num{
+  color: #174069;
+}
+
+.total-chart-percent{
+    color: #174069;
+}
+
+.total-chart-ing{
+  margin-top: 15px;
+}
+
+.total-chart-minus{
+  margin-top: 15px;
 }
 
 /* 일별 확진환자 발생 및 완치 추세 차트 */
